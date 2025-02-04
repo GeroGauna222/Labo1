@@ -1,0 +1,49 @@
+# depslib dependency file v1.0
+1724205410 source:c:\users\usuar\desktop\labo 1\clase_3\debug.cpp
+
+1724202537 source:c:\users\usuar\desktop\labo 1\clase_3\orden.c
+
+1724202497 source:c:\users\usuar\desktop\labo 1\clase_3\switch.c
+
+1724205422 source:c:\users\usuar\desktop\labo 1\clase_3\integrador1_gauna.c
+	<string.h>
+	<stdio.h>
+	<stdlib.h>
+
+1724202497 source:c:\users\usuar\desktop\labo 1\clase_3\cuadtriang.c
+
+1724364677 source:c:\users\usuar\desktop\labo 1\clase_3\bucles.c
+	<stdio.h>
+	<math.h>
+
+1724856329 source:c:\users\usuar\desktop\labo 1\clase_3\arrays.c
+	<stdio.h>
+	<math.h>
+	<time.h>
+	<stdlib.h>
+
+1725485813 source:c:\users\usuar\desktop\labo 1\clase_3\strings.c
+	<stdlib.h>
+	<stdio.h>
+	<string.h>
+
+1724962599 source:c:\users\usuar\desktop\labo 1\clase_3\funcion_sumar.c
+	<stdio.h>
+
+1725033643 source:c:\users\usuar\desktop\labo 1\clase_3\ejs_divertidos.c
+
+1725289179 source:c:\users\usuar\desktop\labo 1\clase_3\geringoso.c
+	<stdio.h>
+	<string.h>
+
+1725991712 source:c:\users\usuar\desktop\labo 1\clase_3\fgets_a_fondo.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+
+1725991662 source:c:\users\usuar\desktop\labo 1\clase_3\clase_5_9.c
+	<stdio.h>
+
+1725991852 source:c:\users\usuar\desktop\labo 1\clase_3\codificacion_anakin.c
+	<stdio.h>
+
