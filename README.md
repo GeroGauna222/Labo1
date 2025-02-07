@@ -1,2 +1,85 @@
 # Labo1
 Repo de contenidos para la materia Laboratorio de Computación 1
+Buen día a todos! Antes de comenzar, les deseamos que la materia les sea leve y la puedan disfrutar, es al menos lo que nosotros buscamos. Nuestro objetivo es que terminen este cuatrimestre sabiendo un poco más de lo que hoy saben, y con todas las ganas de seguir aprendiendo acerca de este mundo nerd tan interesante que es la ciencia de datos.
+Los contenidos que veremos, y que deberán dominar (mentira, tampoco tanto) para aprobar, son los siguientes:
+- Manejo de planillas de cálculo
+- Programación en C
+- Arduino
+Tendrán a su disposición bibliografía complementaria para facilitarles los contenidos, sumado a videos y lo trabajado en clase. Tambien les facilitamos parciales viejos de la materia, no se preocupen ;)
+
+Ya sentadas las bases, comencemos
+
+# Introducción
+## ¿Qué es programar?
+Programar es darle una serie de instrucciones a un sistema, el cual es capaz de procesarlas, entenderlas y responder en base a las mismas
+## ¿Y un sistema?
+Un sistema es un conjunto de elementos que trabajan de manera integrada para un fin común. Son varios elementos que se relacionan y funcionan como un todo, casi todo a nuestro alrededor puede verse como un sistema.
+## ¿Qué es un lenguaje?
+En el contexto de la programación, un lenguaje nos permite escribir programas que la maquina entiende
+Lo dividimos en 3 categorías:
+- Maquina (ojo, 'lenguaje')
+- de Alto Nivel
+- de Bajo Nivel
+
+### Código máquina
+Lo que realmente comprende el cerebro de la máquina (el microprocesador)
+Lenguaje en base al código binario, entiende solo 2 estados: 0 y 1
+Todo lo que realizamos en la computadora se traduce a esto
+
+![Codigo maquina]("/Users/usuar/Pictures/Screenshots/codmaquina.png")
+
+### Codificación binaria
+¿Que sería un bit?...
+
+### Bajo Nivel
+Acá ubicamos el lenguaje ensamblador, este es lo más cercano al código maquina que uno puede escribir. Un programa assembler se ocupa de traducirlo a maquina según el micro con el que el cuenta el sistema. Escribir en assembler tiene la limitación de que hay que conocer sobre el hardware específico de la máquina, y si lo hacemos mal se pueden generar fallos críticos en el sistema (¡pum!)
+
+![Assembler]("/Users/usuar/Pictures/Screenshots/assem.png")
+
+### Alto Nivel
+Ahora sí. Para facilitarnos la vida, llegaron los lenguajes de alto nivel, son los que ustedes conocen como lenguajes de programación. Python, Java y C son de este tipo, y son lo que estaremos utilizando en este curso, más precisamente lenguaje C. Claramente, el hecho de que sea más fácil para nosotros el escribir en lenguajes de alto nivel, conlleva más pasos y procesos por los que las instrucciones deberán pasar para llegar a algo que la maquina comprenda.
+El proceso parece complicado, pero realmente no lo es (porque se ocupa sola la compu, vos solo te sentas y esperas unos milisegundos).
+Como nosotros trabajaremos con C, mostraremos como funciona en el caso de este lenguaje, y lo simplificaremos en los siguientes pasos:
+
+![Codificacion Informacion](https://github.com/eCanayUnsam/Labo-1/blob/main/Imagenes/Compilador.jpg)
+
+**El preproceador**
+El preprocesador acepta el código fuente como entrada y es responsable de:
+- quitar los comentarios
+- interpretar las directivas del preprocesador las cuales inician con #.
+
+  - #include -- incluye el contenido del archivo nombrado. Estos son usualmente
+llamados archivos de cabecera (header).
+    - #include <math.h> -- Archivo de la biblioteca estándar de matemáticas.
+    - #include <stdio.h> -- Archivo de la biblioteca estándar de Entrada/Salida.
+  - #define -- define un nombre simbólico o constante. Sustitución de macros.
+    - #define TAM_MAX_ARREGLO 100
+
+**Compilador de C**
+El compilador de C traduce el código fuente en código deensamblador.
+
+**Ensamblador**
+El ensamblador crea el código fuente o los archivos objeto. 
+
+**Enlazador** 
+Si algún archivo fuente hace referencia a funciones de una biblioteca o de funciones que están definidas en otros archivos fuentes, el enlazador combina estas funciones (con main()) para crear un archivo ejecutable. Las referencias a variables externas en esta etapa son resueltas.
+
+##
+Okey, ya empezamos con las definiciones, pero no nos vayamos por las ramas con conceptos complicados y palabras raras. Mejor vayamos un poco mas a lo importante, a lo que a nosotros nos gusta y nos va a entretener en la materia...
+
+Se nombraron una serie de palabras que tal vez para algunos sean un poco chino. Así que tiremos estas palabras al aire, junto con otros que también estaría bueno conocer antes de empezar:
+
+*Comentarios*
+
+*Headers*
+
+*Macros*
+
+*Variable*
+
+*IDE*
+
+*Framework*
+
+*...*
+
