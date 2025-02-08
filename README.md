@@ -2,14 +2,14 @@
 Repo de contenidos para la materia Laboratorio de Computación 1
 Buen día a todos! Antes de comenzar, les deseamos que la materia les sea leve y la puedan disfrutar, es al menos lo que nosotros buscamos. Nuestro objetivo es que terminen este cuatrimestre sabiendo un poco más de lo que hoy saben, y con todas las ganas de seguir aprendiendo acerca de este mundo nerd tan interesante que es la ciencia de datos.
 Los contenidos que veremos, y que deberán dominar (mentira, tampoco tanto) para aprobar, son los siguientes:
-- Manejo de planillas de cálculo
-- Programación en C
-- Arduino
+- **Manejo de planillas de cálculo**: los contenidos abarcan 4 clases y un examen. Aprenderemos herramientas interesantes y aplicables en el día a día.
+- **Programación en C**: la parte más extensa de la materia se la dedicaremos a que den sus primeros pasos en la escritura de código. En esta materia utilizaremos el lenguaje C, con el cual aprenderán las bases generales sobre la programación para luego poder extrapolarlos a otros lenguajes en el futuro.
+- **Arduino**: Para finalizar, el último módulo consta de contenidos apuntados al manejo de dispositivos Arduino. Lo interesante será el ver cómo lo que escribimos en la computadora es capaz de extrapolar al mundo real, siendo posible que una srie de línea de código prendan y apaguen una luz, por ejemplo. A nuestra disposición tendremos modelos Arduino UNO, los cuales el alumno utilizará para diseñar junto con un grupo de trabajo un proyecto final de la materia. La aprobación del mismo posibilitará la promoción de la materia (es decir, no ir a final). Cabe recalcar que la nota siempre es *Individual, y NO GRUPAL*
 Tendrán a su disposición bibliografía complementaria para facilitarles los contenidos, sumado a videos y lo trabajado en clase. Tambien les facilitamos parciales viejos de la materia, no se preocupen ;)
 
 Ya sentadas las bases, comencemos
 
-# Introducción
+# Introducción a C
 ## ¿Qué es programar?
 Programar es darle una serie de instrucciones a un sistema, el cual es capaz de procesarlas, entenderlas y responder en base a las mismas
 ## ¿Y un sistema?
@@ -81,5 +81,5 @@ Se nombraron una serie de palabras que tal vez para algunos sean un poco chino. 
 
 *Framework*
 
-*...*
+*DataBase*
 
