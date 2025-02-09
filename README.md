@@ -27,15 +27,40 @@ Lo que realmente comprende el cerebro de la máquina (el microprocesador)
 Lenguaje en base al código binario, entiende solo 2 estados: 0 y 1
 Todo lo que realizamos en la computadora se traduce a esto
 
-![Codigo maquina]("/Users/usuar/Pictures/Screenshots/codmaquina.png")
+![Codigo maquina](https://github.com/GeroGauna222/Labo1/blob/main/xExtra/codmaquina.jpg).
 
 ### Codificación binaria
-¿Que sería un bit?...
+El sistema binario es el que permite el funcionamiento de los ordenadores. Como ya mencionamos, utiliza dos condiciones: 0 y 1.
+el que solo existan dos posibilidades significa que se esta trabajando en base 2. Ahora bien, para entender esto:
+
+  En nuestro día a día, cuando contamos y pensamos en numeros, conocemos 10 posibilidades, del 0 al 9. Los demás números los formamos con combinaciones de estos. Esta es la conocida como *base decimal*, pero también existen otras bases:
+  
+- la *hexagesimal*
+- la *quintal*
+- la *duodecimal*
+
+La *base binaria* es la que utilizan los sistemas digitales
+
+### ¿Que sería un bit?
+El término bit significa dígito binario, y corresponde al número 0 o 1 en la numeración binaria. Es la unidad de información más pequeña que puede manipular una máquina digital.
+
+Lógicamente , con dos bits se pueden obtener 4 combinaciones (o como se las llama realmente, condiciones) diferentes (2x2): 00 10 11 01
+
+Con 3, tengo 8 (2x2x2): 000 001 011 111 110 100 101 010
+
+Con 4, hay 16 (2x2x2x2)
+
+¿Se entiende por donde viene la mano? **Con n bits, puedo representar 2^n valores**
+
+Entonces teniendo n bits puedo representar 2^n numeros diferentes. ¿Y cómo escribo en binario?
+
+En un número binario, el valor de un bit depende de su posición, y se lo arma empezando desde la derecha.
+
 
 ### Bajo Nivel
 Acá ubicamos el lenguaje ensamblador, este es lo más cercano al código maquina que uno puede escribir. Un programa assembler se ocupa de traducirlo a maquina según el micro con el que el cuenta el sistema. Escribir en assembler tiene la limitación de que hay que conocer sobre el hardware específico de la máquina, y si lo hacemos mal se pueden generar fallos críticos en el sistema (¡pum!)
 
-![Assembler]("/Users/usuar/Pictures/Screenshots/assem.png")
+![Assembler](https://github.com/GeroGauna222/Labo1/blob/main/xExtra/assem.png)
 
 ### Alto Nivel
 Ahora sí. Para facilitarnos la vida, llegaron los lenguajes de alto nivel, son los que ustedes conocen como lenguajes de programación. Python, Java y C son de este tipo, y son lo que estaremos utilizando en este curso, más precisamente lenguaje C. Claramente, el hecho de que sea más fácil para nosotros el escribir en lenguajes de alto nivel, conlleva más pasos y procesos por los que las instrucciones deberán pasar para llegar a algo que la maquina comprenda.
