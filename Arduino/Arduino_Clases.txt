@@ -1,0 +1,47 @@
+*Clase 1:* Introducción a Arduino y configuración del entorno
+- Presentación de la plataforma Arduino
+- Instalación del IDE de Arduino
+- Tinkercad
+- Descripción de la placa Arduino y sus componentes
+- Explicación básica de electrónica:
+    - Ley de Ohm
+    - Qué es una resistencia
+    - Qué es un LED
+    - Display de 7 segmentos
+- Primer programa: "Hola Mundo" con un LED
+- Explicación de la estructura básica de un sketch de Arduino
+
+*Clase 2:* Entradas y salidas digitales
+- Conceptos de entradas y salidas digitales
+- Uso de pines digitales para encender y apagar LEDs
+- Lectura de botones y switches
+- Ejemplo práctico: Control de un LED con un botón
+
+*Clase 3:* Entradas analógicas y PWM
+- Conceptos de señales analógicas y PWM
+- Lectura de valores analógicos con el pin A0
+- Uso de la función analogRead()
+- Generación de señales PWM con la función analogWrite()
+- Ejemplo práctico: Control de brillo de un LED con un potenciómetro
+
+*Clase 4:* Sensores y actuadores
+- Introducción a sensores comunes (temperatura, luz, etc.)
+- Lectura de datos de sensores
+- Uso de actuadores (motores, servos)
+- Ejemplo práctico: Control de un servo motor con un sensor de temperatura
+
+*Clase 5:* Comunicación serial
+- Conceptos de comunicación serial
+- Uso de la función Serial.begin() y Serial.print()
+- Envío y recepción de datos a través del puerto serial
+- Ejemplo práctico: Monitorización de datos de un sensor en el Serial Monitor
+
+*Clase 6:* Proyectos integradores
+- Integración de conocimientos adquiridos
+- Introducción a bibliotecas de Arduino
+    - Uso de bibliotecas para simplificar el código y añadir funcionalidades avanzadas
+    - Ejemplos de bibliotecas populares (Wire, Servo, LiquidCrystal)
+    - Cómo instalar y utilizar una biblioteca en el IDE de Arduino
+- Diseño y desarrollo de un proyecto final (ej. estación meteorológica, robot simple)
+- Documentación y presentación del proyecto
+- Resolución de dudas y cierre del curso
