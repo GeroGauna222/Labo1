@@ -146,3 +146,4 @@ Se nombraron una serie de palabras que tal vez para algunos sean un poco chino. 
 
 *DataBase*
 
+## Tipos de datos
