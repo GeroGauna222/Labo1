@@ -132,11 +132,18 @@ Okey, ya empezamos con las definiciones, pero no nos vayamos por las ramas con c
 
 Se nombraron una serie de palabras que tal vez para algunos sean un poco chino. Así que tiremos estas palabras al aire, junto con otros que también estaría bueno conocer antes de empezar:
 
-*Comentarios*
+*Comentarios* : Texto que se agrega al código fuente para facilitar su comprensión y mantenimiento. Los comentarios son ignorados por el compilador y se escriben en lenguaje natural, son útiles para recordar detalles importantes, explicar el propósito de un bloque de código, documentar el código y colaborar con otros programadores. 
 
-*Librerías*
+*Funciones* : Son bloques de código que están preparados para cumplir con cierta función, reciben ciertos datos para luego devolver otros. Sirven para realizar tareas concretas y simplificar el programa a la vista, además de evitar tener que escribir el mismo pedacito de código varias veces.
 
-*Headers*
+*Directivas de pre-procesador (**#**)* : Se utilizan para modificar el código fuente antes de que el compilador lo procese, se identifican por el signo **#** al principio de la línea. 
+
+*Headers (**.h** files)* : Parte vital del lenguaje C, .h es una simple extensión para identificar un tipo de archivo y significa header (cabecera). Se lo incluye con la sentencia #include.
+Contiene tipos de datos, constantes, macros, funciones, definiciones de las clases. Su objetivo es que el programa donde se incluya ese header conozca esa información y la pueda utilizar.
+
+Pasamos al concepto de **libraries**, archivos .o que incluyen estas funciones y demás que ya fueron pre-definidas en el archivo *.h* . Conlleva mucha explicación para esta altura, pero quedemonos con el siguiente concepto, para utilizar las librerías que contienen ciertas funciones, debemos incluir el archivo .h indicado para la misma. Tenemos las llamadas ***Standard Libraries*** de C
+
+[Referencia ANSI C](https://github.com/eCanayUnsam/Labo-1/blob/main/GUIA%20REF%20C.pdf).
 
 *Macros*
 
