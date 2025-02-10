@@ -44,6 +44,8 @@ La *base binaria* es la que utilizan los sistemas digitales
 ### ¿Que sería un bit?
 El término bit significa dígito binario, y corresponde al número 0 o 1 en la numeración binaria. Es la unidad de información más pequeña que puede manipular una máquina digital.
 
+![Codificacion Informacion](https://github.com/eCanayUnsam/Labo-1/blob/main/Imagenes/Codificacion_Informacion.jpg)
+
 Lógicamente , con dos bits se pueden obtener 4 combinaciones (o como se las llama realmente, condiciones) diferentes (2x2): 00 10 11 01
 
 Con 3, tengo 8 (2x2x2): 000 001 011 111 110 100 101 010
@@ -54,8 +56,43 @@ Con 4, hay 16 (2x2x2x2)
 
 Entonces teniendo n bits puedo representar 2^n numeros diferentes. ¿Y cómo escribo en binario?
 
-En un número binario, el valor de un bit depende de su posición, y se lo arma empezando desde la derecha.
+En un número binario, el valor de cada bit depende de su posición, y se lo arma empezando desde la derecha.
 
+![Escritura Binaria](https://github.com/GeroGauna222/Labo1/blob/main/xExtra/binary.png).
+
+Podemos ver que el numero más a la derecha será el que represente al 2^0 (= 1), el de su izquierda 2^1 (= 2), el siguiente 2^2 (=4) y así...
+
+Para escribir un número como el 5 sé que me harán falta por lo menos 3 bits, pues con 2 bits solo puedo representar 4 combinaciones:
+
+- 0 -> 00 -> [2^1 x 0] + [2^0 x 0]
+- 1 -> 10 -> [2^1 x 0] + [2^0 x 1]
+- 2 -> 01 -> [2^1 x 1] + [2^0 x 0]
+- 3 -> 11 -> [2^1 x 1] + [2^0 x 1]
+
+5 -> tengo [2^2 x 1] + [2^1 x 0] + [2^0 x 1] = 4 + 0 + 1 = 5 -> el decimal 5 es en binario 101
+
+entonces si me dan el numero binario 10011001, sé que al tener 8 digitos binarios lo tendría que armar así:
+
+[2^7 x 1] + [2^6 x 0] + [2^5 x 0] + [2^4 x 1] + [2^3 x 1] + [2^2 x 0] + [2^1 x 0] + [2^0 x 1]
+
+Todo lo que es x0 lo puedo ignorar, me importa lo multiplicado x1
+
+2^7 + 2^4 + 2^3 + 2^0 = 128 + 16 + 8 + 1 = 149 en decimal
+
+¡Así de fácil!
+
+El de recién fue un numero de 8 bits, a esto se lo llama **un Byte**. **Un byte es la mínima unidad direccionable de memoria en la mayoría de las computadoras modernas**. Una computadora con memoria direccionable por bytes no puede almacenar una pedazo individual de datos más pequeño que un byte. Osea, guardo cosas de a bytes
+
+Para un byte, el menor número posible es 0 (representado por ocho ceros: 00000000), y el mayor es 255 (representado por ocho unos: 11111111), que permite la creación de 256 valores diferentes.
+
+Así como tenemos el Byte (8 bits), tenemos el Kilobyte (1024 Bytes), el Megabyte (1024 Kilobytes), un Gigabyte (1024 Megabytes), un Terabyte (1024 GB), etc.
+
+### Tabla ASCII
+Queda claro entonces que la maquina solamente entiende numeros, y entonces llega la cuestión: de alguna manera represento, por ejemplo, una 'a'. Así, cada entrada tiene su representación interna, y está dada por la Tabla ASCII.
+
+El código ASCII se creó en la década de 1960 como un estándar para la transferencia de datos entre computadoras. Es un estándar mundialmente conocido y utilizado.
+
+[Tabla ASCII](https://github.com/eCanayUnsam/Labo-1/blob/main/Imagenes/tascii.pdf)
 
 ### Bajo Nivel
 Acá ubicamos el lenguaje ensamblador, este es lo más cercano al código maquina que uno puede escribir. Un programa assembler se ocupa de traducirlo a maquina según el micro con el que el cuenta el sistema. Escribir en assembler tiene la limitación de que hay que conocer sobre el hardware específico de la máquina, y si lo hacemos mal se pueden generar fallos críticos en el sistema (¡pum!)
@@ -67,7 +104,7 @@ Ahora sí. Para facilitarnos la vida, llegaron los lenguajes de alto nivel, son 
 El proceso parece complicado, pero realmente no lo es (porque se ocupa sola la compu, vos solo te sentas y esperas unos milisegundos).
 Como nosotros trabajaremos con C, mostraremos como funciona en el caso de este lenguaje, y lo simplificaremos en los siguientes pasos:
 
-![Codificacion Informacion](https://github.com/eCanayUnsam/Labo-1/blob/main/Imagenes/Compilador.jpg)
+![Compilacion](https://github.com/eCanayUnsam/Labo-1/blob/main/Imagenes/Compilador.jpg)
 
 **El preproceador**
 El preprocesador acepta el código fuente como entrada y es responsable de:
