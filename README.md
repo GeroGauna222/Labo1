@@ -145,14 +145,14 @@ Pasamos al concepto de **libraries**, archivos .o que incluyen estas funciones y
 
 [Referencia ANSI C](https://github.com/eCanayUnsam/Labo-1/blob/main/GUIA%20REF%20C.pdf).
 
-*Macros*
+*Macros* : conjunto de comandos que se pueden ejecutar con una palabra clave. Son útiles para automatizar tareas repetitivas y ahorrar tiempo
 
-*Variable*
+*Variable* : un espacio en la memoria de un ordenador que almacena datos. Los datos que se almacenan en una variable pueden ser de cualquier tipo, como números, cadenas de texto, objetos o booleanos. Se identifican en el codigo con un **nombre *unico***
 
-*IDE*
+*IDE* : una aplicación que ayuda a los programadores a desarrollar software. Combina herramientas como editores de código, compiladores, depuradores, entre otras, en una sola interfaz.
 
-*Framework*
-
-*DataBase*
+*Framework* : es un marco de trabajo, proporciona un conjunto de herramientas, librerías y estructuras predefinidas que ayudan a desarrollar aplicaciones, para tareas específicas, de manera más rápida y eficiente.
 
 ## Tipos de datos
+
+Cuando usamos un programa es muy importante manejar datos. En C podemos almacenar los datos en variables, como ya dijimos. El contenido de las variables se puede ver o cambiar en cualquier momento. Estas variables pueden ser de distintos tipos dependiendo del dato que queramos meter. No es lo mismo guardar un nombre que un número.
