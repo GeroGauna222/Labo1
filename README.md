@@ -161,6 +161,6 @@ Pasamos al concepto de **libraries**, archivos .o que incluyen estas funciones y
 
 *Framework* : es un marco de trabajo, proporciona un conjunto de herramientas, librerías y estructuras predefinidas que ayudan a desarrollar aplicaciones, para tareas específicas, de manera más rápida y eficiente.
 
-## Tipos de datos
+## Tipos de datos 
 
 Cuando usamos un programa es muy importante manejar datos. En C podemos almacenar los datos en variables, como ya dijimos. El contenido de las variables se puede ver o cambiar en cualquier momento. Estas variables pueden ser de distintos tipos dependiendo del dato que queramos meter. No es lo mismo guardar un nombre que un número.
