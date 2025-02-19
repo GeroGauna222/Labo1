@@ -10,13 +10,15 @@ Tendrán a su disposición bibliografía complementaria para facilitarles los co
 
 Ya sentadas las bases, comencemos
 
+# ***Posterior al módulo de Hojas de Cálculo***
+
 # Introducción a C
 ## ¿Qué es programar?
-Programar es darle una serie de instrucciones a un sistema, el cual es capaz de procesarlas, entenderlas y responder en base a las mismas
+Programar es darle una serie de instrucciones a un sistema, el cual es capaz de procesarlas, entenderlas y responder en base a las mismas. Para sentirnos más piola, los que lo hacemos lo rebautizamos 'codear' ;)
 ## ¿Y un sistema?
 Un sistema es un conjunto de elementos que trabajan de manera integrada para un fin común. Son varios elementos que se relacionan y funcionan como un todo, casi todo a nuestro alrededor puede verse como un sistema.
 ## ¿Qué es un lenguaje?
-En el contexto de la programación, un lenguaje nos permite escribir programas que la maquina entiende
+En el contexto de la programación, un lenguaje nos permite escribir programas que la maquina entiende. Con este, le damos órdenes al hardware.
 Lo dividimos en 3 categorías:
 - Maquina (ojo, 'lenguaje')
 - de Alto Nivel
@@ -106,10 +108,12 @@ Como nosotros trabajaremos con C, mostraremos como funciona en el caso de este l
 
 ![Compilacion](https://github.com/eCanayUnsam/Labo-1/blob/main/Imagenes/Compilador.jpg)
 
+**Codigo Fuente** o *source code* es lo que uno escribió con la sintaxis de C
+
 **El preproceador**
 El preprocesador acepta el código fuente como entrada y es responsable de:
 - quitar los comentarios
-- interpretar las directivas del preprocesador las cuales inician con #.
+- interpretar las directivas del preprocesador, las cuales inician con #.
 
   - #include -- incluye el contenido del archivo nombrado. Estos son usualmente
 llamados archivos de cabecera (header).
@@ -119,13 +123,15 @@ llamados archivos de cabecera (header).
     - #define TAM_MAX_ARREGLO 100
 
 **Compilador de C**
-El compilador de C traduce el código fuente en código deensamblador.
+El compilador de C traduce a código deensamblador.
 
 **Ensamblador**
-El ensamblador crea el código fuente o los archivos objeto. 
+El ensamblador crea los archivos objeto .o.
 
 **Enlazador** 
 Si algún archivo fuente hace referencia a funciones de una biblioteca o de funciones que están definidas en otros archivos fuentes, el enlazador combina estas funciones (con main()) para crear un archivo ejecutable. Las referencias a variables externas en esta etapa son resueltas.
+
+En la práctica, terminamos haciendo este proceso incontables veces hasta que nos dejen de saltar errores (si, hasta a los senior les pasa), pero como esto lo hace la maquina sin que nos enteremos de nada (encima nos va a decir DONDE estan los errores) y, además, vamos a estar ayudados por un debugger (gracias IDE), no nos tenemos que procupar mucho. 
 
 ##
 Okey, ya empezamos con las definiciones, pero no nos vayamos por las ramas con conceptos complicados y palabras raras. Mejor vayamos un poco mas a lo importante, a lo que a nosotros nos gusta y nos va a entretener en la materia...
@@ -133,6 +139,8 @@ Okey, ya empezamos con las definiciones, pero no nos vayamos por las ramas con c
 Se nombraron una serie de palabras que tal vez para algunos sean un poco chino. Así que tiremos estas palabras al aire, junto con otros que también estaría bueno conocer antes de empezar:
 
 *Comentarios* : Texto que se agrega al código fuente para facilitar su comprensión y mantenimiento. Los comentarios son ignorados por el compilador y se escriben en lenguaje natural, son útiles para recordar detalles importantes, explicar el propósito de un bloque de código, documentar el código y colaborar con otros programadores. 
+
+*Debugger* : herramienta que ayuda a los programadores (si, VOS) a detectar y corregir errores en el código de un programa
 
 *Funciones* : Son bloques de código que están preparados para cumplir con cierta función, reciben ciertos datos para luego devolver otros. Sirven para realizar tareas concretas y simplificar el programa a la vista, además de evitar tener que escribir el mismo pedacito de código varias veces.
 
