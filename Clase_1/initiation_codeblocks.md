@@ -17,24 +17,52 @@ Bueno, estamos adentro, okey, muchas cosas, interfaz que parece de Windows XP, p
 
 Vemos varias areas en la pantalla, todas las vamos a usar (no todas sus herramientas porque son millones).
 
-Lo normal sería usar un text editor, un compilador y un linker. Todo se manejaba desde el terminal, 
+Lo normal sería usar un text editor, un compilador y un linker. Todo se podría manejar desde el terminal, 
 escribiendo comandos para editar compilar, linkear, correr. 
-
 Bueno, el IDE tiene todo eso integrado, yyyyy un debugger, ademas de otras herramientas extra.
 
 ### Vamos ahora a crear **nuestro primer proyecto**
-So even though an IDE is capable of more, you use it in this book to create simple, console-based programs.
-Here’s how it works:
-Ahora que abrimos el IDE, podemos ver que empezamos en una hoja con el logo del programa, el *start here*, y vemos que cuenta con un par de links.
-2. Vamos a tocar New Project.
+Bueno, el IDE tiene un potencial grandísimo, sin embargo en este curso vamos a ir a lo simple, básico y consciso.
+
+Ya abrimos el IDE, podemos ver que empezamos en una hoja con el logo del programa, el *start here*, y vemos que cuenta con un par de links.
+Vamos a tocar **New Project**.
+
+Un proyecto en Code::Blocks es una *estructura organizada* que agrupa todos los archivos relacionados con un programa (código fuente, archivos de cabecera, bibliotecas, etc.) dentro de sí. Cuando creas un proyecto, Code::Blocks agrupa varios componentes en una carpeta para mantener todo organizado. Estos son los principales:
+
+Archivos de código fuente:
+Lo que nosotros escribimos en lenguaje C. Estos archivos suelen tener extensión .c (por ejemplo, main.c).
+
+Archivos útiles:
+Como imagenes o demás que podemos estar utilizando en nuestro proyecto
+
+Archivos de configuración:
+Code::Blocks genera un archivo especial (con extensión .cbp) que guarda información sobre cómo debe compilar (traducir) y ejecutar tu programa.
+
+Archivos binarios (compilados):
+Cuando se construye (o compila) tu programa, Code::Blocks crea un archivo que la computadora puede entender (generalmente dentro de una carpeta llamada bin o output).
+
 Nos va a saltar otra ventana, *New from template*
-Que opción tomamos? Hay un millon si
-3. Choose Console Application and then click the Go button.
-The Console Application Wizard appears.
-You can place a check mark by the item Skip This Page Next Time to
-skip over the wizard’s first screen.
-4. Click the Next button.
-5. Choose C as the language you want to use, and then click the Next
-button.
-C is quite different from C++ — you can do things in one language that
-aren’t allowed in the other.
+Que opción tomamos? Hay un millon, si ya se. Bueno, para empezar el template es basicamente un *molde* para el proyecto, dependiendo de cual sea el fin del
+mismo, uno podría elegir este o el otro. Vienen con cosas predefinidas para ciertos usos. Para nosotros que estamos arrancando, elegimos *Console Application*
+
+Nos salta el Wizard
+
+Elegimos C como lenguaje
+
+Nombre de proyecto y ubicación, creemos una carpeta para guardar los proyectos!!
+
+Ya seleccionado eso, vamos a next, elegimos el compilador GNU CC y vamos a checkear las opciones de Debug y Release.
+
+Finish y listo, tengo mi proyecto
+
+A la izquierda en el Management vemos que aparece algo ahora, si tocamos la carpeta Source vamos a ver un archivo *main.c*. Este archivo de texto plano es un archivo de codigo fuente, si hacemos doble click lo vamos a ver en el panel más grande, el editor de texto. Vemos el codigo todo colorido, lindo. Si Gero lo que quieras hermoso todo... pero que significa????? 
+
+Obvio, chino básico POR AHORA. Desglocemos...
+
+Así se termina viendo:
+📂 MiProyecto/         <-- Carpeta principal del proyecto
+ ├── 📄 main.c               <-- Archivo con tu código
+ ├── 📄 MiProyecto.cbp <-- Archivo de configuración del proyecto, le dice al IDE como ejecutar tu programita
+ ├── 📂 bin/                 <-- Carpeta donde se guarda el programa final
+ └── 📂 obj/                 <-- Carpeta con archivos intermedios
+
