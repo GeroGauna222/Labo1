@@ -15,20 +15,35 @@ corresponda a SU maquina
 ## **Abrimos Code:Blocks**
 Bueno, estamos adentro, okey, muchas cosas, interfaz que parece de Windows XP, pero no nos asustemos. Organicemonos
 
-Toolbars: Los botones de arriba. No toquemos mucho esto todavía, hay pocos botones que vamos a usar indispensablemente. Una vez estemos más cómodos con todo 
-ya vamos a jugar con más libertad.
+Vemos varias areas en la pantalla, todas las vamos a usar (no todas sus herramientas porque son millones).
 
-Management: Ventana de la izquierda con 4 desplegables
+Lo normal sería usar un text editor, un compilador y un linker. Todo se manejaba desde el terminal, 
+escribiendo comandos para editar compilar, linkear, correr. 
 
-Status bar: At the bottom of the screen, you see information about the project and editor and about other activities that take place in Code::Blocks.
-
-Editor: The big window in the center-right area of the screen is where you
-type code.
-
-Logs: The bottom of the screen features a window with many, many tabs.
-Each tab displays information about your programming projects. The tab you
-use most often is named Build Log.
-
-The View menu controls the visibility of every item displayed in the window.
-Choose the proper command, such as Manager, from the View menu to show
-or hide that item. Control toolbars by using the View➪Toolbars submenu.
+Bueno, el IDE still tiene todo eso integrado, yyyyy un
+debugger, ademas de otras herramientas extra. It sports features necessary to create
+graphical programs and to craft complex projects. Because of that, the IDE is
+geared toward working with projects, not merely with individual programs.
+This section explains the process of creating a project using the
+Code::Blocks IDE.
+Creating a new project
+The examples presented in this book are all console applications, which
+means that they run in Text mode in a terminal window. I feel that’s the best
+way to teach basic programming concepts without overwhelming you with a
+large, complex, graphical beast of a program. So even though an IDE is capable of more, you use it in this book to create simple, console-based programs.
+Here’s how it works:
+1. Start Code::Blocks.
+You see the Start Here screen, which displays the Code::Blocks logo and
+a few links. If you don’t see the Start Here screen, choose File➪Close
+Workspace.
+2. Click the Create a New Project link.
+The New from Template dialog box appears, as shown in Figure 1-2.
+3. Choose Console Application and then click the Go button.
+The Console Application Wizard appears.
+You can place a check mark by the item Skip This Page Next Time to
+skip over the wizard’s first screen.
+4. Click the Next button.
+5. Choose C as the language you want to use, and then click the Next
+button.
+C is quite different from C++ — you can do things in one language that
+aren’t allowed in the other.
