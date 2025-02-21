@@ -59,10 +59,16 @@ A la izquierda en el Management vemos que aparece algo ahora, si tocamos la carp
 
 Obvio, chino básico POR AHORA. Desglocemos...
 
+Vemos arriba unos #, ya hablamos de estos llamados include, estamos trayendo librerias, las podemos ver en la guia de ref ansi C
+
 Así se termina viendo:
 📂 MiProyecto/         <-- Carpeta principal del proyecto
+
  ├── 📄 main.c               <-- Archivo con tu código
+ 
  ├── 📄 MiProyecto.cbp <-- Archivo de configuración del proyecto, le dice al IDE como ejecutar tu programita
+ 
  ├── 📂 bin/                 <-- Carpeta donde se guarda el programa final
+ 
  └── 📂 obj/                 <-- Carpeta con archivos intermedios
 
