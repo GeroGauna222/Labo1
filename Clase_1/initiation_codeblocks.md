@@ -70,6 +70,7 @@ Desglose de int main():
 - main: Es el nombre de la función principal. TIENE QUE SER main, NO LO CAMBIES
 - (): Indica que es una función (en este caso, sin parámetros, despues lo vamos a hablar más a fondo).
 - {}: Marca el inicio y final del bloque de código que pertenece a main().
+- return 0: es la devolución de la función, si devuelve el 0, es que todo funcionó como corresponde
 
 Ya sabiendo todo esto, estamos listos para ver magia. Si tocamos en la ToolBar de arriba el botón de Build lo que voy a estar haciendo es compilar y linkear. Despues tengo el botón Run y el botón Build and Run. Toquemos ese último y vemos que pasa
 
