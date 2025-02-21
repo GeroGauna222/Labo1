@@ -59,9 +59,22 @@ A la izquierda en el Management vemos que aparece algo ahora, si tocamos la carp
 
 Obvio, chino básico POR AHORA. Desglocemos...
 
-Vemos arriba unos #, ya hablamos de estos llamados include, estamos trayendo librerias, las podemos ver en la guia de ref ansi C
+Vemos arriba unos #, las directivas del preprocesador. Ya hablamos de estos include, estamos trayendo librerias, las podemos ver en la [Referencia ANSI C](https://github.com/eCanayUnsam/Labo-1/blob/main/GUIA%20REF%20C.pdf). Ahí vamos a ver las funciones y macros que traen estas librerias
+
+### main(){ ???
+
+main() es el punto de entrada de todo programa en C. Cuando ejecutas el programa, el sistema operativo busca automáticamente esta función para empezar la ejecución.
+
+Desglose de int main():
+- int: Indica que la función main() devuelve un número entero.
+- main: Es el nombre de la función principal. TIENE QUE SER main, NO LO CAMBIES
+- (): Indica que es una función (en este caso, sin parámetros, despues lo vamos a hablar más a fondo).
+- {}: Marca el inicio y final del bloque de código que pertenece a main().
+
+Ya sabiendo todo esto, estamos listos para ver magia. Si tocamos en la ToolBar de arriba el botón de Build lo que voy a estar haciendo es compilar y linkear. Despues tengo el botón Run y el botón Build and Run. Toquemos ese último y vemos que pasa
 
 Así se termina viendo:
+
 📂 MiProyecto/         <-- Carpeta principal del proyecto
 
  ├── 📄 main.c               <-- Archivo con tu código
@@ -71,4 +84,3 @@ Así se termina viendo:
  ├── 📂 bin/                 <-- Carpeta donde se guarda el programa final
  
  └── 📂 obj/                 <-- Carpeta con archivos intermedios
-
