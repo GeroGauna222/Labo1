@@ -211,6 +211,61 @@ La función `printf` en C se utiliza para imprimir datos en la consola. A contin
     ```
 
 Estos ejemplos muestran cómo `printf` puede ser utilizado para mostrar diferentes tipos de datos en C, lo cual es esencial para la depuración y visualización de resultados en programas.
+
+### Uso de `scanf` para Leer Datos desde la Entrada Estándar
+
+La función `scanf` en C se utiliza para leer datos desde la entrada estándar (generalmente el teclado) y almacenarlos en variables. Es una herramienta esencial para interactuar con el usuario en programas.
+
+#### Sintaxis Básica
+
+```c
+scanf("formato", &variable);
+```
+
+- **`formato`**: Especifica el tipo de dato que se espera leer, como `%d` para enteros, `%f` para números de punto flotante, `%c` para caracteres, etc.
+- **`&variable`**: Es la dirección de memoria de la variable donde se almacenará el valor ingresado. El operador `&` (ampersand) es necesario para pasar la dirección de la variable.
+
+#### Ejemplos de Uso
+
+1. **Leer un número entero**:
+  ```c
+  int numero;
+  printf("Ingrese un número entero: ");
+  scanf("%d", &numero);
+  printf("El número ingresado es: %d\n", numero);
+  ```
+
+2. **Leer un número de punto flotante**:
+  ```c
+  float decimal;
+  printf("Ingrese un número decimal: ");
+  scanf("%f", &decimal);
+  printf("El número ingresado es: %f\n", decimal);
+  ```
+
+3. **Leer un carácter**:
+  ```c
+  char letra;
+  printf("Ingrese un carácter: ");
+  scanf(" %c", &letra); // El espacio antes de %c evita problemas con caracteres de nueva línea
+  printf("El carácter ingresado es: %c\n", letra);
+  ```
+
+4. **Leer múltiples valores**:
+  ```c
+  int a, b;
+  printf("Ingrese dos números enteros separados por un espacio: ");
+  scanf("%d %d", &a, &b);
+  printf("Los números ingresados son: %d y %d\n", a, b);
+  ```
+
+#### Consideraciones
+
+- Es importante asegurarse de que el formato especificado en `scanf` coincida con el tipo de dato de la variable.
+- `scanf` no valida automáticamente la entrada del usuario, por lo que se debe manejar cuidadosamente para evitar errores.
+- Para leer cadenas de texto, se utiliza `%s`, pero se recomienda usar funciones más seguras como `fgets` para evitar desbordamientos de búfer.
+
+El uso de `scanf` permite crear programas interactivos que pueden recibir datos del usuario y procesarlos de manera dinámica.
 ### Uso de `sizeof` para Determinar el Tamaño de Tipos de Datos
 
 El operador `sizeof` en C se utiliza para determinar el tamaño en bytes de un tipo de dato o de una variable. A continuación, se muestran ejemplos de cómo utilizar `sizeof`:
@@ -238,6 +293,46 @@ El operador `sizeof` en C se utiliza para determinar el tamaño en bytes de un t
     ```
 
 Estos ejemplos muestran cómo `sizeof` puede ser utilizado para determinar el tamaño de diferentes tipos de datos y variables en C, lo cual es útil para la gestión de memoria y la optimización de programas.
+### Uso de `#define` en C
+
+El preprocesador de C proporciona la directiva `#define`, que se utiliza para definir constantes simbólicas o macros. Esto permite asignar un nombre a un valor o a una expresión, facilitando la legibilidad y el mantenimiento del código.
+
+#### Definición de Constantes
+
+`#define` se utiliza comúnmente para definir constantes que no cambian durante la ejecución del programa.
+
+```c
+#define PI 3.14159
+#define MAX 100
+
+int main() {
+  printf("El valor de PI es: %f\n", PI);
+  printf("El valor máximo permitido es: %d\n", MAX);
+  return 0;
+}
+```
+
+#### Definición de Macros
+
+También se puede usar `#define` para crear macros, que son fragmentos de código que se expanden en tiempo de preprocesamiento.
+
+```c
+#define CUADRADO(x) ((x) * (x))
+
+int main() {
+  int numero = 5;
+  printf("El cuadrado de %d es: %d\n", numero, CUADRADO(numero));
+  return 0;
+}
+```
+
+#### Consideraciones
+
+- No se debe terminar la línea de `#define` con un punto y coma (`;`).
+- Las macros pueden hacer el código más compacto, pero un uso excesivo puede dificultar la depuración.
+- Para constantes, se recomienda usar `const` en lugar de `#define` cuando sea posible, ya que `const` respeta el ámbito y el tipo de datos.
+
+El uso de `#define` es una herramienta poderosa en C que permite simplificar el código y mejorar su legibilidad.
 ## Conclusión
 
 En esta clase hemos revisado los tipos de variables más comunes en C y los operadores que podemos utilizar para manipular estos datos. Es fundamental comprender estos conceptos básicos para poder escribir programas eficientes y efectivos en C.
