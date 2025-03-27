@@ -74,7 +74,7 @@ Los modificadores de tipos se utilizan para alterar el tamaño y/o el rango de l
     ```c
     unsigned int positivo = 4294967295;
     ```
-                |
+
 ## Operadores en C
 
 Los operadores son símbolos que le indican al compilador que debe realizar una operación matemática, lógica o de manipulación de datos. A continuación, se presentan algunos de los operadores más utilizados en C:
@@ -105,7 +105,60 @@ Los operadores son símbolos que le indican al compilador que debe realizar una 
   ```c
   int modulo = 10 % 3; // Resultado: 1
   ```
+  ### Operadores de Incremento y Asignación Compuesta
 
+  #### Operadores de Incremento
+
+  - **`++variable`**: Incrementa el valor de la variable en 1 antes de usarla en una expresión.
+    ```c
+    int a = 5;
+    int b = ++a; // a se incrementa a 6, luego b toma el valor de 6
+    printf("a: %d, b: %d\n", a, b); // Salida: a: 6, b: 6
+    ```
+
+  - **`variable++`**: Incrementa el valor de la variable en 1 después de usarla en una expresión.
+    ```c
+    int a = 5;
+    int b = a++; // b toma el valor de 5, luego a se incrementa a 6
+    printf("a: %d, b: %d\n", a, b); // Salida: a: 6, b: 5
+    ```
+
+  #### Operadores de Asignación Compuesta
+
+  - **`+=`**: Suma y asigna el resultado a la variable.
+    ```c
+    int a = 5;
+    a += 3; // Equivalente a: a = a + 3
+    printf("a: %d\n", a); // Salida: a: 8
+    ```
+
+  - **`-=`**: Resta y asigna el resultado a la variable.
+    ```c
+    int a = 5;
+    a -= 3; // Equivalente a: a = a - 3
+    printf("a: %d\n", a); // Salida: a: 2
+    ```
+
+  - **`*=`**: Multiplica y asigna el resultado a la variable.
+    ```c
+    int a = 5;
+    a *= 3; // Equivalente a: a = a * 3
+    printf("a: %d\n", a); // Salida: a: 15
+    ```
+
+  - **`/=`**: Divide y asigna el resultado a la variable.
+    ```c
+    int a = 10;
+    a /= 2; // Equivalente a: a = a / 2
+    printf("a: %d\n", a); // Salida: a: 5
+    ```
+
+  - **`%=`**: Calcula el módulo y asigna el resultado a la variable.
+    ```c
+    int a = 10;
+    a %= 3; // Equivalente a: a = a % 3
+    printf("a: %d\n", a); // Salida: a: 1
+    ```
 ### Operadores Lógicos
 
 - **&&**: AND lógico
