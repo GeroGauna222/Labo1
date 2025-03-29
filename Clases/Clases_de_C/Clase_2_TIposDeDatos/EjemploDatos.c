@@ -5,6 +5,7 @@ int global = 10; // Variable global
 
 void mostrarGlobal()
 {
+    scanf("%d", &global); // Leer el valor de la variable global
     printf("Variable global: %d\n", global);
 }
 
