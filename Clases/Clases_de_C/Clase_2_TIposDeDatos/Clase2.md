@@ -262,46 +262,45 @@ La función `printf` en C se utiliza para imprimir datos en la consola. A contin
     bool verdadero = true;
     printf("El valor booleano es: %d\n", verdadero);
     ```
-    ### Tipos de Datos Adicionales
+### Tipos de Datos Adicionales
 
-    En C, además de los tipos de datos básicos, existen variantes que permiten ajustar el tamaño y el rango de los datos. A continuación, se describen algunos de estos tipos adicionales:
+En C, además de los tipos de datos básicos, existen variantes que permiten ajustar el tamaño y el rango de los datos. A continuación, se describen algunos de estos tipos adicionales:
 
-    1. **`long int`**: Utilizado para almacenar números enteros más grandes que los que permite un `int` estándar. Su tamaño depende de la arquitectura del sistema, pero generalmente es de 4 bytes en sistemas de 32 bits y 8 bytes en sistemas de 64 bits.
-      ```c
-      long int largo = 9223372036854775807;
-      printf("El valor de largo es: %ld\n", largo);
-      ```
+1. **`long int`**: Utilizado para almacenar números enteros más grandes que los que permite un `int` estándar. Su tamaño depende de la arquitectura del sistema, pero generalmente es de 4 bytes en sistemas de 32 bits y 8 bytes en sistemas de 64 bits.
+  ```c
+  long int largo = 9223372036854775807;
+  printf("El valor de largo es: %ld\n", largo);
+  ```
 
-    2. **`long long int`**: Utilizado para almacenar números enteros aún más grandes que los permitidos por `long int`. Generalmente tiene un tamaño de 8 bytes.
-      ```c
-      long long int muyLargo = 9223372036854775807;
-      printf("El valor de muyLargo es: %lld\n", muyLargo);
-      ```
+2. **`long long int`**: Utilizado para almacenar números enteros aún más grandes que los permitidos por `long int`. Generalmente tiene un tamaño de 8 bytes.
+  ```c
+  long long int muyLargo = 9223372036854775807;
+  printf("El valor de muyLargo es: %lld\n", muyLargo);
+  ```
 
-    3. **`short int`**: Utilizado para almacenar números enteros más pequeños, ocupando menos memoria. Generalmente tiene un tamaño de 2 bytes.
-      ```c
-      short int corto = 32767;
-      printf("El valor de corto es: %hd\n", corto);
-      ```
+3. **`short int`**: Utilizado para almacenar números enteros más pequeños, ocupando menos memoria. Generalmente tiene un tamaño de 2 bytes.
+  ```c
+  short int corto = 32767;
+  printf("El valor de corto es: %hd\n", corto);
+  ```
 
-    4. **`unsigned long int`**: Similar a `long int`, pero solo permite valores positivos, duplicando el rango positivo.
-      ```c
-      unsigned long int positivoLargo = 18446744073709551615U;
-      printf("El valor de positivoLargo es: %lu\n", positivoLargo);
-      ```
+4. **`unsigned long int`**: Similar a `long int`, pero solo permite valores positivos, duplicando el rango positivo.
+  ```c
+  unsigned long int positivoLargo = 18446744073709551615U;
+  printf("El valor de positivoLargo es: %lu\n", positivoLargo);
+  ```
 
-    5. **`unsigned long long int`**: Similar a `long long int`, pero solo permite valores positivos, con un rango aún mayor.
-      ```c
-      unsigned long long int positivoMuyLargo = 18446744073709551615U;
-      printf("El valor de positivoMuyLargo es: %llu\n", positivoMuyLargo);
-      ```
+5. **`unsigned long long int`**: Similar a `long long int`, pero solo permite valores positivos, con un rango aún mayor.
+  ```c
+  unsigned long long int positivoMuyLargo = 18446744073709551615U;
+  printf("El valor de positivoMuyLargo es: %llu\n", positivoMuyLargo);
+  ```
 
-    6. **`unsigned short int`**: Similar a `short int`, pero solo permite valores positivos, duplicando el rango positivo.
-      ```c
-      unsigned short int positivoCorto = 65535;
-      printf("El valor de positivoCorto es: %hu\n", positivoCorto);
-      ```
-
+6. **`unsigned short int`**: Similar a `short int`, pero solo permite valores positivos, duplicando el rango positivo.
+  ```c
+  unsigned short int positivoCorto = 65535;
+  printf("El valor de positivoCorto es: %hu\n", positivoCorto);
+  ```
 
 Estos ejemplos muestran cómo `printf` puede ser utilizado para mostrar diferentes tipos de datos en C, lo cual es esencial para la depuración y visualización de resultados en programas.
 
