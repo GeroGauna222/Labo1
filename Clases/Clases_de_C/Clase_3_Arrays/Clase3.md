@@ -21,7 +21,7 @@ tipo_de_dato nombre_del_array[tamaño];
 ```
 entonces...
 ```c
-int edades[5];
+int ages[5];
 ```
 esta es la declaración de un array de valores enteros, se reserva espacio de memoria para 5 enteros. 
 
@@ -31,10 +31,11 @@ Para un array de n datos, los valores guardados se recuperan con indices del 0 a
 #include <stdio.h>
 #include <stdint.h>  // Necesario para uintptr_t
 void show_array() {
-  int edades[5] = {18, 19, 23, 34, 45};
-  printf("Valor en la posición %d: %d // Dirección: %p\n", 0, edades[0], (unsigned long)(uintptr_t)&edades[0]);
-  printf("Valor en la posición %d: %d // Dirección: %p\n", 1, edades[1], (unsigned long)(uintptr_t)&edades[1]);
-  printf("Valor en la posición %d: %d // Dirección: %p\n", 4, edades[4], (unsigned long)(uintptr_t)&edades[4]);
+  int ages[5] = {18, 19, 23, 34, 45};
+  age_not_minor = ages[0];
+  printf("Valor en la posición %d: %d // Dirección: %p\n", 0, ages[0], (unsigned long)(uintptr_t)&ages[0]);
+  printf("Valor en la posición %d: %d // Dirección: %p\n", 1, ages[1], (unsigned long)(uintptr_t)&ages[1]);
+  printf("Valor en la posición %d: %d // Dirección: %p\n", 4, ages[4], (unsigned long)(uintptr_t)&ages[4]);
 }
 ```
 para su entendimiento (no es info que deban saber, pero para que entiendan el código)...
@@ -166,6 +167,11 @@ void strings() {
     memset(buffer, '-', 9);  // Llena los primeros 9 bytes con '-'
     buffer[9] = '\0';        // Agrega el final de string
     printf("8. Buffer con memset: %s\n", buffer);
+
+    // 9. strcspn: Busca en un string la primera posición donde aparece algún carácter que esté en un segundo string. Si no lo encuentra devuelve la última posición
+    char texto[] = "Hola mundo\n";
+    int pos = strcspn(texto, "\n");
+    printf("El salto de línea está en la posición: %d\n", pos);
 }
 
 ```
@@ -208,9 +214,82 @@ void example_failing_str() {
 
 ```
 
----
+--
 
 Otro posible error es la sobreescritura del \0
+
+---
+## Text Input
+
+A la hora de ingresar texto es que la cosa se pone más complicada. 
+Ya conocemos scanf(), entonces probemos...
+
+```c
+  char str[20];
+  puts("Ingrese su nombre: ");
+  scanf("%s", str);
+  printf("Hola %s!\n", str);
+
+  puts("Ingrese su nombre Y apellido: ");
+  scanf("%s", str);
+  printf("Hola %s!\n", str);
+```
+Ya encontramos una particularidad, no es así?
+ Bueno, probemos ahora de la siguiente manera...
+
+```c
+  char str[20];
+  puts("Ingrese su nombre: ");
+  fgets(str,sizeof(str), stdin);
+  printf("Hola %s!\n", str);
+
+  puts("Ingrese su nombre Y apellido: ");
+  fgets(str,sizeof(str), stdin);
+  printf("Hola %s!\n", str);
+```
+Ok, arregle un problema......... y cree otro je.
+Un intento mas (la 3ra es la vencida dicen)
+
+```c
+  char str[20];
+  puts("Ingrese su nombre: ");
+  fgets(str, sizeof(str), stdin);
+  str[strcspn(str, "\n")] = '\0';
+  printf("Hola %s!\n", str);
+
+  puts("Ingrese su nombre Y apellido: ");
+  fgets(str, sizeof(str), stdin);
+  str[strcspn(str, "\n")] = '\0';
+  printf("Hola %s!\n", str);
+```
+
+Bueno, logramos que funcione! Pero hay un problema todavía... si ingreso más de 20 caracteres?
+
+Asi nos encontramos con otro error... hagamos otra corrección:
+
+```c
+  char str[20];
+  int c;
+  puts("Ingrese su nombre: ");
+  fgets(str, sizeof(str), stdin);
+  str[strcspn(str, "\n")] = '\0';
+  while ((c = getchar()) != '\n' && c != EOF);
+  printf("Hola %s!\n", str);
+
+  puts("Ingrese su nombre Y apellido: ");
+  fgets(str, sizeof(str), stdin);
+  str[strcspn(str, "\n")] = '\0';
+  while ((c = getchar()) != '\n' && c != EOF);
+  printf("Hola %s!\n", str);
+```
+
+Ajá! ahora sí. Ahora, habiendo ya visto este ida y vuelta de código, expliquemos un poco qué fue lo que estuvimos viendo.
+
+
+
+---
+## Tipos de memoria
+
 
 ```c
 char str[5] = "Hola";
