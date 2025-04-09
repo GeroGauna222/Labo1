@@ -186,6 +186,71 @@ La librería `string.h` proporciona funciones para manipular cadenas de caracter
   char *subcadena = strstr(frase, "en");  // Busca "en" en frase
   ```
 
+### ctype.h (Character Type Library)
+
+La librería `ctype.h` proporciona funciones para clasificar y transformar caracteres individuales.
+
+#### Funciones principales
+
+- **Funciones de clasificación de caracteres**:
+  ```c
+  char c = 'A';
+  printf("¿Es letra? %d\n", isalpha(c));      // Verifica si es una letra
+  printf("¿Es dígito? %d\n", isdigit(c));     // Verifica si es un dígito
+  printf("¿Es alfanumérico? %d\n", isalnum(c)); // Verifica si es letra o dígito
+  printf("¿Es espacio? %d\n", isspace(' '));  // Verifica si es espacio en blanco
+  printf("¿Es letra mayúscula? %d\n", isupper(c)); // Verifica si es mayúscula
+  printf("¿Es letra minúscula? %d\n", islower('a')); // Verifica si es minúscula
+  printf("¿Es caracter de control? %d\n", iscntrl('\n')); // Verifica si es control
+  printf("¿Es caracter imprimible? %d\n", isprint(c)); // Verifica si es imprimible
+  printf("¿Es caracter de puntuación? %d\n", ispunct('.')); // Verifica si es puntuación
+  ```
+
+- **Funciones de transformación de caracteres**:
+  ```c
+  char minuscula = 'a';
+  char mayuscula = 'Z';
+  
+  printf("Minúscula a mayúscula: %c\n", toupper(minuscula)); // Convierte a mayúscula
+  printf("Mayúscula a minúscula: %c\n", tolower(mayuscula)); // Convierte a minúscula
+  ```
+
+- **Ejemplo de uso práctico**:
+  ```c
+  char texto[] = "Hola123!";
+  int letras = 0, digitos = 0, otros = 0;
+  
+  for (int i = 0; texto[i] != '\0'; i++) {
+      if (isalpha(texto[i]))
+          letras++;
+      else if (isdigit(texto[i]))
+          digitos++;
+      else
+          otros++;
+  }
+  
+  printf("Letras: %d, Dígitos: %d, Otros caracteres: %d\n", letras, digitos, otros);
+  ```
+
+### locale.h (Locale Library)
+
+La librería `locale.h` proporciona funciones para configurar y obtener información sobre la configuración regional del sistema.
+
+#### Ejemplo de uso:
+```c
+#include <locale.h>
+#include <stdio.h>
+
+int main() {
+    // Configurar el locale para mostrar caracteres acentuados correctamente
+    setlocale(LC_CTYPE, "");  // "" usa la configuración del sistema operativo
+    
+    printf("Ahora podemos mostrar caracteres con acentos: á, é, í, ó, ú, ñ\n");
+    
+    return 0;
+}
+```
+
 ## Ejemplo de uso combinado de librerías
 
 A continuación, un ejemplo que ilustra el uso combinado de varias librerías:
