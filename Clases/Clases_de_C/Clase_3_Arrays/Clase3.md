@@ -384,7 +384,7 @@ void str_correct() {
 }
 ```
 
-Listo, esta es la recomendación para el ingreso de datos. Vemos que ahora tenemos un buffer que es a donde va lo que ingrese el usuario, ahi lo guarda fgets(). Luego sscanf revisa ese nuevo "buffer" y de ahí lee la información en el formato que se desee, y además no lee el caracter Enter `\n`. De esta manera logramos manejar errores que podrían darse a la hora de leer datos. **Igualmente nos encontraremos con limitaciones**, pero que se arreglan con facilidad:
+Listo, esta es la recomendación para el ingreso de datos. Vemos que ahora tenemos un buffer que es a donde va lo que ingrese el usuario (consideraremos este como "inllenable"), ahi lo guarda fgets(). Luego sscanf revisa ese nuevo "buffer" y de ahí lee la información en el formato que se desee, y además no lee el caracter Enter `\n`. De esta manera logramos manejar errores que podrían darse a la hora de leer datos. **Igualmente nos encontraremos con limitaciones**, pero que se arreglan con facilidad:
 > `%s` lee solo una palabra, que se puede arreglar esto con %N[^\n]s (N siendo la cantidad de caracteres a leer como máximo y [^\n] indica que lea hasta el enter en vez de hasta el espacio)
 
 Lo que vamos a hacer en este curso, va a ser darles libertad: si quieren usar scanf y fgets, haganlo así. Si quieren usar solo scanf con sus debidas correcciones, también. Si quieren usar lo recomendado, bienvenido sea; sólo sepan que lo que queremos es que se maneje correctamente la información.
