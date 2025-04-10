@@ -32,7 +32,7 @@ int main() {
     int edad = 18;
     
     if (edad >= 18) {
-        printf("Eres mayor de edad.\n");
+        printf("Que grande que sos\n");
     }
     
     return 0;
@@ -62,9 +62,9 @@ int main() {
     int edad = 15;
     
     if (edad >= 18) {
-        printf("Eres mayor de edad.\n");
+        printf("Grandote.\n");
     } else {
-        printf("Eres menor de edad.\n");
+        printf("Chiquito.\n");
     }
     
     return 0;
@@ -106,7 +106,7 @@ int main() {
     } else if (calificacion >= 60) {
         printf("Suficiente\n");
     } else {
-        printf("Reprobado\n");
+        printf("Desaprobado\n");
     }
     
     return 0;
@@ -132,17 +132,17 @@ int main() {
     
     // AND lógico (ambas condiciones deben ser verdaderas)
     if (edad >= 18 && ingreso > 10000) {
-        printf("Calificas para el préstamo.\n");
+        printf("Te damos el prestamo.\n");
     }
     
     // OR lógico (al menos una condición debe ser verdadera)
     if (edad > 65 || ingreso < 5000) {
-        printf("Calificas para asistencia especial.\n");
+        printf("Te damos asistencia.\n");
     }
     
     // NOT lógico (invierte el valor)
     if (!(edad < 18)) {
-        printf("No eres menor de edad.\n");
+        printf("No sos chiquito.\n");
     }
     
     return 0;

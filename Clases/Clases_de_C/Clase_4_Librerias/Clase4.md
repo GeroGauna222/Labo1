@@ -89,7 +89,7 @@ La librería `time.h` proporciona funciones para manipular información relacion
   // Realizar operaciones...
   time_t fin = time(NULL);
   double diferencia = difftime(fin, inicio);
-  printf("Tiempo transcurrido: %.2f segundos\n", diferencia);
+  printf("Tiempo transcurrido: %d segundos\n", diferencia);
   ```
 
 - **`localtime()`**: Convierte un tiempo en una estructura tm con componentes de fecha y hora locales.
