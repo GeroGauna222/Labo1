@@ -232,25 +232,6 @@ La librería `ctype.h` proporciona funciones para clasificar y transformar carac
   printf("Letras: %d, Dígitos: %d, Otros caracteres: %d\n", letras, digitos, otros);
   ```
 
-### locale.h (Locale Library)
-
-La librería `locale.h` proporciona funciones para configurar y obtener información sobre la configuración regional del sistema.
-
-#### Ejemplo de uso:
-```c
-#include <locale.h>
-#include <stdio.h>
-
-int main() {
-    // Configurar el locale para mostrar caracteres acentuados correctamente
-    setlocale(LC_CTYPE, "");  // "" usa la configuración del sistema operativo
-    
-    printf("Ahora podemos mostrar caracteres con acentos: á, é, í, ó, ú, ñ\n");
-    
-    return 0;
-}
-```
-
 ## Ejemplo de uso combinado de librerías
 
 A continuación, un ejemplo que ilustra el uso combinado de varias librerías:
