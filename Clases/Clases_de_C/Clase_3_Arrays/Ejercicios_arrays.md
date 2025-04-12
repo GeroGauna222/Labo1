@@ -63,5 +63,5 @@ Verificar si un string de hasta 4 letras termina en vocal.
 
 ---
 
-## Ejercicio 20: Determinar si tres números forman una progresión aritmética
+## Ejercicio 13: Determinar si tres números forman una progresión aritmética
 Verificar si los 3 números ingresados forman una progresión.
