@@ -18,8 +18,8 @@ La instrucción `if` es la estructura condicional más básica. Evalúa una expr
 ### Sintaxis básica
 
 ```c
-if (condición) {
-    // Código a ejecutar si la condición es verdadera
+if (condicion) {
+    // Codigo a ejecutar si la condicion es verdadera
 }
 ```
 
@@ -46,10 +46,10 @@ La estructura `if-else` permite ejecutar un bloque de código cuando la condici�
 ### Sintaxis básica
 
 ```c
-if (condición) {
-    // Código a ejecutar si la condición es verdadera
+if (condicion) {
+    // Codigo a ejecutar si la condicion es verdadera
 } else {
-    // Código a ejecutar si la condición es falsa
+    // Codigo a ejecutar si la condicion es falsa
 }
 ```
 
@@ -78,14 +78,14 @@ Cuando necesitamos evaluar múltiples condiciones en secuencia, podemos usar la 
 ### Sintaxis básica
 
 ```c
-if (condición1) {
-    // Código a ejecutar si condición1 es verdadera
-} else if (condición2) {
-    // Código a ejecutar si condición1 es falsa y condición2 es verdadera
-} else if (condición3) {
-    // Código a ejecutar si condición1 y condición2 son falsas y condición3 es verdadera
+if (condicion1) {
+    // Codigo a ejecutar si condicion1 es verdadera
+} else if (condicion2) {
+    // Codigo a ejecutar si condicion1 es falsa y condicion2 es verdadera
+} else if (condicion3) {
+    // Codigo a ejecutar si condicion1 y condicion2 son falsas y condicion3 es verdadera
 } else {
-    // Código a ejecutar si todas las condiciones anteriores son falsas
+    // Codigo a ejecutar si todas las condiciones anteriores son falsas
 }
 ```
 
@@ -130,17 +130,17 @@ int main() {
     int edad = 20;
     int ingreso = 15000;
     
-    // AND lógico (ambas condiciones deben ser verdaderas)
+    // AND logico (ambas condiciones deben ser verdaderas)
     if (edad >= 18 && ingreso > 10000) {
         printf("Te damos el prestamo.\n");
     }
     
-    // OR lógico (al menos una condición debe ser verdadera)
+    // OR logico (al menos una condicion debe ser verdadera)
     if (edad > 65 || ingreso < 5000) {
         printf("Te damos asistencia.\n");
     }
     
-    // NOT lógico (invierte el valor)
+    // NOT logico (invierte el valor)
     if (!(edad < 18)) {
         printf("No sos chiquito.\n");
     }
@@ -156,7 +156,7 @@ El operador condicional ternario (`? :`) es una forma abreviada de escribir decl
 ### Sintaxis básica
 
 ```c
-resultado = (condición) ? valor_si_verdadero : valor_si_falso;
+resultado = (condicion) ? valor_si_verdadero : valor_si_falso;
 ```
 
 ### Ejemplo
@@ -171,7 +171,7 @@ int main() {
     mensaje = (edad >= 18) ? "Mayor de edad" : "Menor de edad";
     printf("%s\n", mensaje);
     
-    // También puede usarse directamente en una expresión
+    // Tambien puede usarse directamente en una expresion
     printf("Estado: %s\n", (edad >= 18) ? "Adulto" : "Menor");
     
     return 0;
@@ -185,16 +185,16 @@ La instrucción `switch` es una forma alternativa de expresar múltiples condici
 ### Sintaxis básica
 
 ```c
-switch (expresión) {
+switch (expresion) {
     case valor1:
-        // Código a ejecutar si expresión == valor1
+        // Codigo a ejecutar si expresion == valor1
         break;
     case valor2:
-        // Código a ejecutar si expresión == valor2
+        // Codigo a ejecutar si expresion == valor2
         break;
-    // ... más casos ...
+    // ... mas casos ...
     default:
-        // Código a ejecutar si ningún caso coincide
+        // Codigo a ejecutar si ningun caso coincide
 }
 ```
 
@@ -214,7 +214,7 @@ int main() {
             printf("Martes\n");
             break;
         case 3:
-            printf("Miércoles\n");
+            printf("Miercoles\n");
             break;
         case 4:
             printf("Jueves\n");
@@ -223,13 +223,13 @@ int main() {
             printf("Viernes\n");
             break;
         case 6:
-            printf("Sábado\n");
+            printf("Sabado\n");
             break;
         case 7:
             printf("Domingo\n");
             break;
         default:
-            printf("Día inválido\n");
+            printf("Dia invalido\n");
     }
     
     return 0;
@@ -248,16 +248,16 @@ int main() {
     
     switch (opcion) {
         case 1:
-            printf("Opción 1 seleccionada\n");
+            printf("Opcion 1 seleccionada\n");
             break;
         case 2:
-            printf("Opción 2 seleccionada\n");
-            // Sin break, continúa ejecutando el caso 3
+            printf("Opcion 2 seleccionada\n");
+            // Sin break, continua ejecutando el caso 3
         case 3:
             printf("Procesando opciones 2 y 3\n");
             break;
         default:
-            printf("Opción desconocida\n");
+            printf("Opcion desconocida\n");
     }
     
     return 0;
@@ -283,15 +283,15 @@ int main() {
         printf("Eres mayor de edad.\n");
         
         if (ingreso > 20000) {
-            printf("Calificas para un préstamo grande.\n");
+            printf("Calificas para un prestamo grande.\n");
         } else if (ingreso > 10000) {
-            printf("Calificas para un préstamo mediano.\n");
+            printf("Calificas para un prestamo mediano.\n");
         } else {
-            printf("Calificas para un préstamo pequeño.\n");
+            printf("Calificas para un prestamo pequenio.\n");
         }
     } else {
         printf("Eres menor de edad.\n");
-        printf("No calificas para ningún préstamo.\n");
+        printf("No calificas para ningun prestamo.\n");
     }
     
     return 0;
@@ -305,12 +305,12 @@ int main() {
 
 int main() {
     int departamento = 1;
-    int categoría = 2;
+    int categoria = 2;
     
     switch (departamento) {
         case 1: // Departamento de ventas
             printf("Departamento de Ventas\n");
-            switch (categoría) {
+            switch (categoria) {
                 case 1:
                     printf("Vendedor Junior\n");
                     break;
@@ -318,12 +318,12 @@ int main() {
                     printf("Vendedor Senior\n");
                     break;
                 default:
-                    printf("Categoría desconocida\n");
+                    printf("Categoria desconocida\n");
             }
             break;
         case 2: // Departamento de TI
             printf("Departamento de TI\n");
-            switch (categoría) {
+            switch (categoria) {
                 case 1:
                     printf("Programador Junior\n");
                     break;
@@ -331,7 +331,7 @@ int main() {
                     printf("Programador Senior\n");
                     break;
                 default:
-                    printf("Categoría desconocida\n");
+                    printf("Categoria desconocida\n");
             }
             break;
         default:
@@ -347,13 +347,13 @@ int main() {
 1. **Claridad**: Usar llaves `{ }` incluso para bloques de una sola línea para mejorar la legibilidad.
    ```c
    // Recomendado
-   if (condición) {
-       ejecutarAcción();
+   if (condicion) {
+       ejecutarAccion();
    }
    
-   // No recomendado (pero válido)
-   if (condición)
-       ejecutarAcción();
+   // No recomendado (pero valido)
+   if (condicion)
+       ejecutarAccion();
    ```
 
 2. **Evitar anidaciones excesivas**: Las estructuras muy anidadas pueden dificultar la lectura del código.
@@ -375,31 +375,31 @@ int main() {
     float calificacion;
     char letra;
     
-    printf("Ingrese la calificación numérica (0-100): ");
+    printf("Ingrese la calificacion numerica (0-100): ");
     scanf("%f", &calificacion);
     
     // Validar rango
     if (calificacion < 0 || calificacion > 100) {
-        printf("Error: La calificación debe estar entre 0 y 100.\n");
+        printf("Error: La calificacion debe estar entre 0 y 100.\n");
     } else {
         // Determinar letra usando if-else if
         if (calificacion >= 90) {
             letra = 'A';
-        } else if (calificación >= 80) {
+        } else if (calificacion >= 80) {
             letra = 'B';
-        } else if (calificación >= 70) {
+        } else if (calificacion >= 70) {
             letra = 'C';
-        } else if (calificación >= 60) {
+        } else if (calificacion >= 60) {
             letra = 'D';
         } else {
             letra = 'F';
         }
         
         // Mostrar resultados
-        printf("Calificación: %.1f\n", calificacion);
+        printf("Calificacion: %.1f\n", calificacion);
         printf("Letra: %c\n", letra);
         
-        // Usar switch para mostrar mensaje según la letra
+        // Usar switch para mostrar mensaje segun la letra
         switch (letra) {
             case 'A':
                 printf("¡Excelente trabajo!\n");
@@ -414,7 +414,7 @@ int main() {
                 printf("Necesitas mejorar.\n");
                 break;
             case 'F':
-                printf("Reprobado. Estudia más para la próxima.\n");
+                printf("Reprobado. Estudia mas para la proxima.\n");
                 break;
         }
         
