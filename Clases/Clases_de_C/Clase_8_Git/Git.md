@@ -61,16 +61,18 @@ cd .git
 ls -a
 cd ..
 ```
-
-Ya sabemos entonces crear un repositorio, perfecto... qué es un repositorio? 
+---
+### Ya sabemos entonces crear un repositorio, perfecto... qué es un repositorio? 
 
 Un repositorio es el lugar donde vive tu proyecto: archivos, historial de cambios, configuraciones, etc. 
 Podés tenerlo localmente (en tu computadora) o remotamente (como en GitHub, GitLab o Azure DevOps).
 
+---
+
 Vemos tambien en el bash que se lee en la derecha *(main)* ahora. Esta es la **branch** en la que estás parado. 
-Supongamos que queremos crear otra rama, existe el comando *git checkout .b rama_nueva*. Con este creamos la rama ahora vas a ver que estas en (rama_nueva). 
+Supongamos que queremos crear otra rama, existe el comando *git checkout .b rama_nueva*. Con este creamos la rama ahora vas a ver que estas en (rama_nueva). Queres cambiarle el nombre? *git branch -m rama_nueva nuevo_nombre*. la quiero eliminar? *git branch -d nuevo_nombre*
 Quiero volver a main? *git checkout main* y listo. Vas a ver que cada rama evoluciona a su ritmo, esto lo vamos a poder ver de maneras más visuales con lo que vamos a ir aprendiendo. 
-Basicamente, lo que tiene esto de las ramas, es que **uno puede tener varias versiones de un mismo codigo**. 
+Basicamente, lo que tiene esto de las ramas, es que **uno puede tener varias versiones de un mismo codigo**. Suelen usarse para guardar versiones con particularidades, por ejemplo un branch de developement, una de research, y de estas salir otras. **Todo nace del main/master, el tronco**. En equipos de trabajo, cada grupo suele trabajar sobre una rama para despues todo mergearlo al main una vez funcione todo.
 
 # Ciclo básico de trabajo en Git
 
@@ -104,13 +106,14 @@ GitHub es un lugar donde se hospeda el control de versiones de Git. Así como es
 y se volvió un tipo de CV del programador.
 ![image](https://github.com/user-attachments/assets/5ac64a12-10de-4299-a565-b6d90990480f)
 
-Creamos una cuenta, con nombre de usuario etc. Una vez lsito esto, ya en la cuenta vemos 3 opciones, una es *Learn hoe to use GitHub*. Pueden ir por ese camino si quieren, 
-hoy vamos a empezar con un *Create a new repository*. Acá nos va a dar unas opciones: ponemos nombre, descripcion, si es publico/privado, bueno. 
+Creamos una cuenta, con nombre de usuario etc. Una vez lsito esto, ya en la cuenta vemos 3 opciones, una es *Learn how to use GitHub*. Pueden ir por ese camino si quieren, hoy vamos a empezar con un *Create a new repository*. Acá nos va a dar unas opciones: ponemos nombre, descripcion, si es publico/privado, bueno. 
 El *Initialize this repo with*, y te muestra 3 cosas: README, .gitignore y license
 
-### .gitignore
-### README
-### License
+- README.md: Es un archivo de texto (en formato Markdown) que se utiliza para describir el proyecto. Suele incluir qué hace el programa, cómo instalarlo, cómo usarlo y quién lo hizo.
+
+- .gitignore: Es un archivo donde se especifican los archivos o carpetas que Git debe ignorar. Por ejemplo: archivos temporales, ejecutables, archivos de configuración personal, etc.
+
+- LICENSE: Este archivo indica la licencia bajo la cual se distribuye el código (MIT, GPL, Apache, etc.), es decir, qué se puede o no hacer con el código.
 
 ## Asociando el Repo
 Ya pasando a la proxima etapa, nos va a mostrar una pantalla con varias cosas, entre ellas una URL, esta es la dirección del Repo. Nosotros lo que queremos hacer es comunicar 
@@ -124,12 +127,32 @@ git remote add origin "URL"
 ![image](https://github.com/user-attachments/assets/94e75246-d489-4b3a-af1b-27f7d3ef75c2)
 
 Ya asociamos los repos, perfecto, pero... no tiene nada el de GitHub... por qué? Porque aunque esté asociado, todos los commits guardados en local, 
-no fueron subidos al servidor donde se hospeda el repo, en este caso GitHub. Para hacerlo se debe usar un comando que van a cansarse ded escuchar: *git push*
+no fueron subidos al servidor donde se hospeda el repo, en este caso GitHub. Para hacerlo se debe usar un comando que van a cansarse de escuchar: *git push*
+
+```bash
+git push -u origin main
+```
+Esto sería para mi primer push. Probablemente tengas que autorizar la asociación de GitHub - git. 
+
+Estás diciendo: 
+“Quiero subir mi rama main al remoto origin, y además quiero que a partir de ahora mi rama local main siga (track) a origin/main.” ahora solo escribiendo push sin especificar ya puedo pushear traqnuilo en esta rama
 
 ## git pull
+Descarga los últimos cambios del repositorio remoto y los fusiona con tu copia local. Es como decir "traeme lo nuevo y actualizá mi carpeta".
+
+```bash
+git pull origin main
+```
+
+Pero tambien tenemos *git fetch*...
+ Acá vemos la diferencia; fetch es como que lleva un paso previo al fetch
+![image](https://github.com/user-attachments/assets/f64d085d-dcaf-48cf-a1d1-9f80f4072bb6)
 
 ## git clone
-
-## Branches a fondo
+Y si lo que quiero es traerme una rama de algún remoto? Esto no es actualizar, recordemos... esto es **traerlo a mi pc *de cero* desde el remoto**. 
+Esto funciona tambien en caso que el trabajo de uno quede muuuy desactualizado y el pull necesite hacer muchos cambios, a veces es mejor directamente clonar
+```bash
+git clone URL
+```
 
 ![image](https://github.com/user-attachments/assets/124145fc-ad8d-4239-a1d3-9fe777dd0257)
