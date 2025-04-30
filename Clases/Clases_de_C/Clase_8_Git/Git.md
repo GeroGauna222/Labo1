@@ -102,6 +102,7 @@ Hiciste el commit, okey, esto para un repo local alcanza. Pero ahora... supongam
 
 GitHub es un lugar donde se hospeda el control de versiones de Git. Así como esta GitHub tenemos GitLab, BitBucket y otros. Pero bueno... GitHub es de Microsoft... 
 y se volvió un tipo de CV del programador.
+![image](https://github.com/user-attachments/assets/5ac64a12-10de-4299-a565-b6d90990480f)
 
 Creamos una cuenta, con nombre de usuario etc. Una vez lsito esto, ya en la cuenta vemos 3 opciones, una es *Learn hoe to use GitHub*. Pueden ir por ese camino si quieren, 
 hoy vamos a empezar con un *Create a new repository*. Acá nos va a dar unas opciones: ponemos nombre, descripcion, si es publico/privado, bueno. 
