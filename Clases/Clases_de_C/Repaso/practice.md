@@ -1,12 +1,19 @@
-## Ejercicio 1: Dieta del Deportista
+## Ejercicio 1: Dieta del Deportista (versión menú de opciones)
 
-Un nutricionista lleva el control de lo que come un deportista durante una semana. Cada día, el deportista ingresa su consumo de alimentos, con un máximo de 5 alimentos por día.
+Un nutricionista lleva el control de lo que come un deportista *durante una semana*. Cada día, el deportista ingresa su consumo de alimentos, con un máximo de 5 alimentos por día.
 
-Escriba un programa que:
+Escriba un programa que implemente un **menú** con las siguientes opciones:
 
-* Permita ingresar, por día, los alimentos consumidos (nombre y cantidad de calorías).
-* Calcule la cantidad total de calorías ingeridas por día.
-* Al final de cada día, imprima:
+1. Ingresar alimento (nombre y calorías) del día actual.
+2. Finalizar ingreso de alimentos del día.
+3. Mostrar el total de calorías consumidas hasta el momento este día.
+4. Mostrar el total de calorías de la semana hasta el momento.
+5. Mostrar el día con mayor consumo calórico hasta el momento.
+
+El programa debe:
+
+* Calcular la cantidad total de calorías ingeridas por día.
+* Al final de cada día, imprimir:
 
 ```
 **** DIA [número del día] ****
@@ -15,17 +22,19 @@ Alimento 2: ...
 Total calorías: [total]
 ```
 
-* El ingreso termina cuando se ingresa como nombre "FIN" o cuando se llega a 5 alimentos.
-* Al final de la semana (7 días), imprimir:
+* El ingreso de alimentos por día termina cuando el usuario selecciona la opción 2 o se alcanzan los 5 alimentos.
+* No se puede finalizar un día sin haber ingresado al menos un alimento.
+* Repetir este proceso durante 7 días.
+* Al finalizar la semana, imprimir:
 
-  * Día con mayor consumo calórico
-  * Total de calorías consumidas en la semana
+  * Día con mayor consumo calórico.
+  * Total de calorías consumidas en la semana.
+  * Si, **en promedio**, el atleta consumio mas de 3000 calorias por dia
 
 **Validaciones:**
 
-* Las calorías deben ser mayores a cero y menores a 5000.
-* No ingresar "FIN" como primer alimento del día (debe haber al menos uno).
-
+* Las calorías deben ser mayores a cero y menores a 5000 por alimento.
+* Controlar que la opción elegida sea válida (entre 1 y 5).
 ---
 
 ## Ejercicio 2: Juego de adivinanza de números
