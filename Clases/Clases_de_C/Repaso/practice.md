@@ -1,12 +1,12 @@
 ## Ejercicio 1: Dieta del Deportista (versión menú de opciones)
 
-Un nutricionista lleva el control de lo que come un deportista *durante una semana*. Cada día, el deportista ingresa su consumo de alimentos, con un máximo de 5 alimentos por día.
+Un nutricionista lleva el control de lo que come un deportista *durante una semana*. Cada día, el deportista ingresa su consumo de en cada comida, siempre ingresa las 4 comidas.
 
 Escriba un programa que implemente un **menú** con las siguientes opciones:
 
-1. Ingresar alimento (nombre y calorías) del día actual.
-2. Finalizar ingreso de alimentos del día.
-3. Mostrar el total de calorías consumidas hasta el momento este día.
+1. Ingresar alimentos (nombre y calorías) del día actual. Si repite esta opción, se debe sobreescribir lo ingresado previamente
+2. Finalizar el día.
+3. Mostrar el total de calorías consumidas este día.
 4. Mostrar el total de calorías de la semana hasta el momento.
 5. Mostrar el día con mayor consumo calórico hasta el momento.
 
@@ -17,23 +17,26 @@ El programa debe:
 
 ```
 **** DIA [número del día] ****
-Alimento 1: [nombre], [calorías]
-Alimento 2: ...
+Desayuno: [nombre], [calorías]
+Almuerzo: ...
+Merienda: ...
+Cena: ...
 Total calorías: [total]
 ```
 
-* El ingreso de alimentos por día termina cuando el usuario selecciona la opción 2 o se alcanzan los 5 alimentos.
-* No se puede finalizar un día sin haber ingresado al menos un alimento.
+* El ingreso de alimentos por día termina cuando el usuario selecciona la opción 2, pero no se puede finalizar un día sin haber ingresado alimentos.
 * Repetir este proceso durante 7 días.
 * Al finalizar la semana, imprimir:
 
-  * Día con mayor consumo calórico.
+  * Día con mayor consumo calorico.
+  * Día con menor consumo calorico
   * Total de calorías consumidas en la semana.
-  * Si, **en promedio**, el atleta consumio mas de 3000 calorias por dia
+  * Si, **en promedio**, el atleta consumio mas de 3000 calorias por dia.
+  * Si hubo algún día que no comió (cals 0)
 
 **Validaciones:**
 
-* Las calorías deben ser mayores a cero y menores a 5000 por alimento.
+* Las calorías deben ser mayores o iguales a cero.
 * Controlar que la opción elegida sea válida (entre 1 y 5).
 ---
 
