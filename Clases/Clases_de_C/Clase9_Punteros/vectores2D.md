@@ -88,7 +88,7 @@ for (int i = 0; i < 3; i++) {
 
 ---
 
-## 🧪 Actividades prácticas
+## Actividades
 
 ### Actividad 1: Cargar una matriz de 3x3 por teclado
 
