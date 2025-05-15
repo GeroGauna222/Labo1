@@ -305,19 +305,6 @@ void loop() {
 
 5. **Monitor de Temperatura**: Usá un sensor de temperatura (si disponés) o simulalo con un potenciómetro, mostrando la lectura en el monitor serie.
 
-## Conclusión
-
-En esta clase hemos aprendido los fundamentos básicos de Arduino:
-
-- Qué es Arduino y cómo instalar el entorno de desarrollo
-- Los componentes básicos de la placa Arduino UNO
-- Conceptos fundamentales de electrónica (Ley de Ohm, resistencia, LEDs)
-- Cómo utilizar una protoboard para conexiones seguras
-- La estructura básica de un sketch de Arduino con las funciones setup() y loop()
-- Cómo crear nuestro primer programa para hacer parpadear un LED
-- El uso del monitor serie para depuración
-
-Con estos conocimientos, ya estás listo para comenzar a experimentar con tus propios proyectos básicos de Arduino. En las siguientes clases, exploraremos sensores, actuadores y técnicas más avanzadas para crear proyectos más complejos e interactivos.
 
 ## Recursos adicionales
 
