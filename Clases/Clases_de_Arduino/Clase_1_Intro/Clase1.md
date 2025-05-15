@@ -24,7 +24,7 @@ El IDE (Integrated Development Environment) de Arduino es el software que usarem
 
 ### Interfaz del IDE de Arduino
 
-![Interfaz de Arduino IDE](https://primary.jwwb.nl/public/i/h/f/temp-oefwigffgsmprjwjepyu/vlp9l3/image-277.png)
+![Interfaz de Arduino IDE](https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEj2GfJGT4JzSzo0CGVr8ieBY8-IJ9mzDNxv7eO2ik352e3TY7qecybVayI4te1QdNI4tHVkNmc_h8rlL2CmFEBWe4IykovOLexi0ogIkro9T7TcHwNxKV3rNiQ_OaTYrn3FNpSiQc7MwxjO/s1600/slide_14.jpg)
 
 - **Editor de texto**: Donde escribís tu código
 - **Área de mensajes**: Muestra información sobre el proceso de compilación y carga
