@@ -4,9 +4,25 @@ Buen día a todos! Antes de comenzar, les deseamos que la materia les sea leve y
 Los contenidos que veremos, y que deberán dominar (mentira, tampoco tanto) para aprobar, son los siguientes:
 - **Manejo de planillas de cálculo**: los contenidos abarcan 4 clases y un examen. Aprenderemos herramientas interesantes y aplicables en el día a día.
 - **Programación en C**: la parte más extensa de la materia se la dedicaremos a que den sus primeros pasos en la escritura de código. En esta materia utilizaremos el lenguaje C, con el cual aprenderán las bases generales sobre la programación para luego poder extrapolarlos a otros lenguajes en el futuro.
-- **Arduino**: Para finalizar, el último módulo consta de contenidos apuntados al manejo de dispositivos Arduino. Lo interesante será el ver cómo lo que escribimos en la computadora es capaz de extrapolar al mundo real, siendo posible que una srie de línea de código prendan y apaguen una luz, por ejemplo. A nuestra disposición tendremos modelos Arduino UNO, los cuales el alumno utilizará para diseñar junto con un grupo de trabajo un proyecto final de la materia. La aprobación del mismo posibilitará la promoción de la materia (es decir, no ir a final). Cabe recalcar que la nota siempre es *INDIVIDUAL, y NO GRUPAL*
+- **Arduino**: Para finalizar, el último módulo consta de contenidos apuntados al manejo de dispositivos Arduino. Lo interesante será el ver cómo lo que escribimos en la computadora es capaz de extrapolar al mundo real, siendo posible que una srie de línea de código prendan y apaguen una luz, por ejemplo. A nuestra disposición tendremos modelos Arduino UNO, los cuales el alumno utilizará para diseñar junto con un grupo de trabajo un proyecto final de la materia. Cabe recalcar que la nota siempre es *INDIVIDUAL, y NO GRUPAL*
 
 Tendrán a su disposición bibliografía complementaria para facilitarles los contenidos, sumado a videos y lo trabajado en clase. Tambien les facilitamos parciales viejos de la materia, no se preocupen ;)
+
+## Condiciones de aprobación de Laboratorio de Computación I: 
+
+La materia es promocionable, las condiciones para ello son: 
+
+-Haber aprobado ambos parciales sin recuperar(cualquiera sea la nota, parcial de aprueba con >4) y aprobar el TP Final Arduino(se aprueba con >4)
+
+-En el caso de recuperar alguno de los dos parciales sea Excel o C, para poder promocionar luego la materia realizando el TP Final Arduino la nota de recuperación tiene que ser >6) 
+
+---
+
+Si Pepe aprobó parcial de Excel y luego desaprueba C, da el recuperatorio y aprueba con 6. Realizando el TP Final esta en condiciones de promocionar.
+
+Si Jose aprobó parcial de Excel y luego desaprueba C, da el recuperatorio y aprueba con 5. Tiene que dar Final obligatorio.
+
+---
 
 Ya sentadas las bases, comencemos
 
