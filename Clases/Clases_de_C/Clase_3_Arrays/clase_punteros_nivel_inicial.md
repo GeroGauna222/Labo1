@@ -1,8 +1,7 @@
 # Clase: **Punteros en C (Nivel Inicial, C estándar)**
-
-> **Para 1er año de Tecnicatura en Programación.**  
+ 
 > Objetivo: entender qué es un puntero, cómo se declara y usa, para qué sirve el operador `&` (dirección) y `*` (contenido), cómo pasar variables a funciones “por referencia”, y cómo evitar errores comunes.  
-> **No** veremos temas avanzados (punteros a funciones, `restrict`, aritmética compleja) para enfocarnos en lo esencial.
+> **No** veremos temas avanzados (punteros a funciones, `restrict`, aritmética compleja)
 
 ---
 
@@ -20,7 +19,7 @@
 
 ---
 
-## 1) Idea intuitiva
+## 1) Idea
 
 - Una **variable** guarda un **valor** (por ej. `int edad = 18;`).
 - Ese valor está en algún lugar de la **memoria** de la PC.
@@ -65,11 +64,9 @@ int main(void) {
 int    *pi;   // puntero a int
 double *pd;   // puntero a double
 char   *pc;   // puntero a char (muy usado con cadenas)
-void   *pv;   // puntero "genérico" (no se puede dereferenciar sin convertir)
 ```
 
 - El `*` **va con el nombre**: `int *a, *b;` (ambos son punteros a int).
-- `void *` sirve para guardar **direcciones de cualquier tipo**, pero **no** se puede usar `*pv` directamente (primero hay que convertirlo al tipo correcto).
 
 ---
 
@@ -304,20 +301,19 @@ int main(void) {
 
 ## 11) Actividades rápidas en clase (5–10 min cada una)
 
-1. **Señalar con el dedo:** en un programa con `int x=1; int *p=&x;`, pediles que digan qué imprime `printf("%d", *p);` y qué pasa si hacen `*p=5;`.
-2. **Detective de errores:** dar un snippet con `int *p; *p=10;` y que expliquen por qué está mal (puntero sin inicializar).
+1. **Señalar con el dedo:** en un programa con `int x=1; int *p=&x;`, qué imprime `printf("%d", *p);` y qué pasa si hacen `*p=5;`.
+2. **Detective de errores:** `int *p; *p=10;` --> explicar por qué está mal.
 3. **Recorrer un arreglo:** cambiar un `for` basado en índices a uno que use puntero.
-4. **Mini–quiz oral:** “¿Qué hace `&`? ¿Qué hace `*`? ¿Qué es `NULL`?”
+4. **Mini–quiz:** “¿Qué hace `&`? ¿Qué hace `*`? ¿Qué es `NULL`?”
 
 ---
 
-## 12) Errores típicos (lista para pegar en el aula)
+## 12) Errores típicos
 
 - Usar un puntero **sin** asignarle una dirección válida → inicializar con `NULL` y **luego** apuntar bien.
 - Olvidar `&` en `scanf`: `scanf("%d", &x);` (¡no `x` a secas!).
 - Salirse del arreglo al mover el puntero.
 - Creer que `a` (arreglo) y `&a` son lo mismo: **no** lo son (tipos distintos).
-- Intentar **modificar literales** de cadena: `char *s = "hola";` es **solo lectura** → usar `const char *s`.
 
 ---
 
@@ -328,7 +324,7 @@ int main(void) {
 - [ ] Sé usar `*` para acceder y **modificar** el contenido apuntado.  
 - [ ] Puedo pasar una variable “por referencia” a una función y que se modifique.  
 - [ ] Puedo recorrer un arreglo usando un puntero sin salirme de rango.  
-- [ ] Sé evitar los errores comunes de la sección 12.
+- [ ] Sé evitar los errores comunes
 
 ---
 
@@ -361,4 +357,4 @@ Contenido *p: 42   (mismo valor que x)
 - Los punteros son **direcciones**.  
 - `&` te da la dirección, `*` te da (y permite cambiar) el **contenido**.  
 - Empezá por **casos sencillos**, mucha práctica y lectura de ejemplos.  
-- ¡No te preocupes si al principio cuesta! Con punteros, **practicar** es la clave.
+- No te preocupes si al principio cuesta... con punteros **practicar** es la clave.
