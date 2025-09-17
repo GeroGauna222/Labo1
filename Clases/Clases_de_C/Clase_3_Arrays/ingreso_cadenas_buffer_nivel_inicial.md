@@ -1,6 +1,5 @@
 # Clase: **Ingreso de cadenas de texto por *buffer* de entrada (C estándar) – Nivel Inicial**
-
-> **Para 1er año de Tecnicatura en Programación.**  
+ 
 > Objetivo: leer **texto** desde teclado de forma **segura** y **predecible** usando el *buffer* de entrada estándar (**`stdin`**). Veremos **`fgets`** (recomendada), **`scanf` con anchos**, y **bucles con `getchar`** para controlar el salto de línea y limpiar el *buffer* sin usar `string.h`.
 
 ---
@@ -103,7 +102,7 @@ int main(void) {
 }
 ```
 **Advertencias:**
-- Si la línea está **vacía**, el formato `%[^\n]` falla (retorna 0). Manejalo como en el ejemplo.
+- Si la línea está **vacía**, el formato `%[^\n]` falla (retorna 0).
 - Después de leer con `%[^\n]` suele **quedar** el `'\n'` pendiente: conviene **consumirlo**.
 
 ---
@@ -299,7 +298,7 @@ int main(void) {
 
 ---
 
-## 15) Tarea para la casa (opcional)
+## 15) Tarea para casita (opcional)
 1) Escribí `int leer_linea(char *buf, int tam)` que lea con `fgets`, quite `'\n'` y devuelva `1` en éxito, `0` en EOF/error.  
 2) Escribí `int contar_palabras(const char *s)` (sin `string.h`): contar secuencias separadas por espacios.  
 3) Escribí un mini–formulario que pida **DNI (entero)**, **apellido y nombre** (línea), y **inicial** (un `char`), validando cada campo.
@@ -313,4 +312,4 @@ Teclado -> [b u f f e r ... '\n'] -> stdin
                queda en memoria hasta que el programa lo lee
 ```
 
-**Cierre:** Elegí `fgets` como opción por defecto para leer texto. Si necesitás números, usá `fgets` + `sscanf`. Si mezclás `scanf` y `fgets`, **siempre** controlá el `'\n'`. ¡Con práctica, el *buffer* de entrada deja de ser un misterio!
+**Cierre:** Elegí el camino que prefieras: `fgets` es la opción por defecto para leer texto. Si necesitás números, podes usar `fgets` + `sscanf`. Si preferís mezclar `scanf` y `fgets`, **siempre** controlá el `'\n'`. En nuestro curso, vamos a limitarnos y suponer que quien ingresa datos será inteligente, y no estará intentando desbordar el buffer ni queriendo romper nuestro código :) 
