@@ -1,8 +1,5 @@
 # Clase: Introducción práctica a **Git** (formato `.md`)
 
-> Nivel: principiantes (ideal para estudiantes que programan en C u otros lenguajes)  
-> Duración sugerida: 2–3 horas con práctica guiada
-
 ---
 
 ## 1) ¿Qué es Git?
@@ -332,7 +329,7 @@ Ej.: `pre-commit` para correr `clang-format` o tests unitarios.
 
 ---
 
-## 16) Chuleta (cheat sheet)
+## 16) Machetin
 
 ```bash
 # Inicio
@@ -372,7 +369,7 @@ git push origin v1.0.0
 
 ---
 
-## 17) Glosario rápido
+## 17) Vocabulario base
 
 - **Commit**: confirmación de cambios con mensaje.  
 - **Branch**: línea de trabajo paralela.  
@@ -384,7 +381,7 @@ git push origin v1.0.0
 
 ---
 
-## 18) Sugerencias para evaluación (ideas)
+## 18) Probá...
 
 - Entregar un repo con:  
   - `README.md` con instrucciones.  
@@ -395,7 +392,7 @@ git push origin v1.0.0
 
 ---
 
-### Apéndice: ejemplo de **mensaje de commit** claro
+### Ejemplo de **mensaje de commit** claro
 
 ```
 feat(calculadora): agrega operación de multiplicación
@@ -409,4 +406,4 @@ Refs: #12
 
 ---
 
-> **Tip final:** Practicá *mucho* con un repo de prueba. Rompé cosas (a propósito), mirá `git status`, `git log`, `git reflog` y vas a entender Git de verdad.
+> **Para cerrar...** Practicá *mucho* con un repo de prueba. Rompé cosas (a propósito), mirá `git status`, `git log`, `git reflog` y vas a entender Git de verdad.
