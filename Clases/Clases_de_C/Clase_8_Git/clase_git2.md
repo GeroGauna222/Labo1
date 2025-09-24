@@ -2,7 +2,7 @@
 
 ---
 
-## 1) ¿Qué es Git?
+## 1) Volviendo, entonces... ¿Qué es Git?
 
 **Git** es un *sistema de control de versiones distribuido*. Te permite:
 - Registrar la historia de tu código (**commits**).
