@@ -9,7 +9,7 @@ Las funciones son bloques de código que realizan una tarea específica y pueden
 - **Modularidad**: Permiten dividir un programa en módulos independientes
 - **Reutilización**: El mismo código puede ser llamado múltiples veces
 - **Abstracción**: Ocultan la complejidad interna, exponiendo solo lo necesario
-- **Mantenimiento**: Facilitan la corrección de errores y actualizacione
+- **Mantenimiento**: Facilitan la corrección de errores y actualizaciones
 
 ## Declaración y definición de funciones
 
