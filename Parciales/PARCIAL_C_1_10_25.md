@@ -24,9 +24,7 @@ Se necesita un sistema por **menú** que permita:
 - Porcentaje de participación de cada ítem sobre el total (redondeo simple).
 
 **Notas y restricciones**
-- Validar entradas (tipo y cantidad).  
-- Usar al menos **un `do…while`** para el menú y **condicionales** para validar.  
-- No usar `float` para contar ítems. El promedio puede ser `float`/`double`.  
+- Validar entradas (tipo y cantidad).   
 - Sugerencia: llevar “cantidad de pedidos” independiente de “cantidad de ítems”.
 
 ---
@@ -54,19 +52,17 @@ El objetivo es **sobrevivir** y salir con al menos **1 HP**.
        - (1) Abrir: chance 50% de **poción** (+**[10..25]** HP) o **bomba** (−**[5..15]** HP).  
        - (2) Ignorar: no pasa nada.  
      - **Dragón bebé**  
-       - (1) Atacar a distancia: daño al dragón **[10..25]**; contraataque **[0..10]** a tu HP.  
-       - (2) Cuerpo a cuerpo: daño al dragón **[20..35]**; contraataque **[5..20]** a tu HP.  
-       - El dragón tiene **50 HP** al inicio del encuentro: si lo reducís a 0 o menos, **ganás el nivel**; si no, el dragón **huye** y el nivel termina igualmente.  
+       - (1) Esconderse: daño aleatorio **[0..50]** 
+       - (2) Correr hacia el (capaz se asusta): **50% de chance**: huye el dragón | recibis **35 de daño** .  
   3) Si tu HP ≤ 0 en cualquier momento, el juego termina (derrota).
 
-**Requisitos técnicos (enfocar “bloques anidados”):**
-- Debe haber **múltiples niveles de anidación**: `for` de niveles → `switch/if` de evento → `switch/if` de acción → sub-condiciones (dados, rangos, etc.).  
+**Requisitos técnicos (enfocar “bloques anidados”):** 
 - Validar elecciones del usuario con bucles hasta que ingrese una opción válida.  
-- Mostrar después de cada nivel: **Nivel, evento, acción, variaciones de HP y HP actual**.
+- Mostrar después de cada nivel: **Nivel, evento y HP actual**
 
 **Al finalizar:**
-- Si sobreviviste los 3 niveles, imprimir “¡Victoria!” y el HP final.  
-- Si no, imprimir “Derrota” y el nivel alcanzado.
+- Si sobreviviste los 3 niveles, imprimir algo (victoria) en pantalla y el HP final.  
+- Si no, imprimir algo (derrota) y el nivel alcanzado.
 
 ---
 
@@ -77,17 +73,10 @@ El museo publica pistas encriptadas. Implementar la **desencriptación** del sig
 1. Si es **vocal** (A, E, I, O, U — mayúscula o minúscula), durante el cifrado se **desplazó 3 posiciones hacia la derecha** en el alfabeto (con vuelta circular: X→A si corresponde).  
    - Para **desencriptar**, desplazar **3 hacia la izquierda** (circular).  
    - Ej.: Cifrado ‘D’ ⇢ Original ‘A’ (si fue vocal ‘A’ cifrada).  
-2. Si es **consonante** (letra alfabética que no es vocal), durante el cifrado se **invirtió el bloque** dentro de su **trío** en el abecedario:  
-   - Se agrupan letras en bloques consecutivos de 3: `ABC | DEF | GHI | JKL | MNO | PQR | STU | VWX | YZ( )`  
-     - El último bloque se completa virtualmente como `YZ?` para mantener tamaño 3.  
-   - Dentro del bloque, la posición **0↔2** se permuta y la **1** queda igual (efecto espejo).  
-   - Para **desencriptar**, aplicar **la misma permutación** (es involutiva).  
-   - Ej.: `D(DEF)` ↔ `F(DEF)`, `G(GHI)` ↔ `I(GHI)`, `J(JKL)` ↔ `L(JKL)`.  
-3. Si es **dígito** `0–9`, durante el cifrado se aplicó **espejo decimal**: `d → (9 - d)`.  
-   - Para **desencriptar**, aplicar lo mismo (involutivo).  
+2. Si es **consonante** (letra alfabética que no es vocal), viceversa a la vocal.
+3. Si es **dígito** `0–9`, durante el cifrado se aplicó **espejo decimal**.  
    - Ej.: `8 ↔ 1`, `0 ↔ 9`.  
 4. **Espacios y símbolos** (incluye tildes y puntuación) **no cambian**.  
-5. El resultado final de la **desencriptación** debe conservar **la misma caja** (mayúsculas/minúsculas) que el texto de entrada.  
 6. **No está permitido** usar `ctype.h` (`toupper`, `tolower`, `isalpha`, etc.). Trabajar con rangos ASCII y/o tablas propias.
 
 **El programa debe:**
@@ -97,19 +86,14 @@ El museo publica pistas encriptadas. Implementar la **desencriptación** del sig
 
 **Sugerencias de implementación (opcional, no obligatorio):**
 - Normalizar el chequeo de letras con rangos `'A'..'Z'` y `'a'..'z'`.  
-- Para vocales, conviene detectar si la letra (ignorando caja) es `A/E/I/O/U`.  
-- Para la permutación por bloques de 3 en consonantes, calcular índice `0..25` (A→0, B→1, …), luego `bloque = idx/3`, `pos = idx%3`. Si `pos==0` usar `pos=2`, si `pos==2` usar `pos=0`, si `pos==1` queda igual; reconstruir letra respetando la caja.  
-- Para el corrimiento circular de vocales, usar desplazamientos mod 26.  
-- Para dígitos, restar el código del carácter a `'9'` y sumar `'0'`.
-
-**Ejemplos rápidos (ilustrativos):**
-- Entrada: `“Jgnnq, Ugetgv!”` → (desencriptado) → texto legible según reglas combinadas.  
-- Entrada: `“Dr3”` → (D↔F por bloque DEF, r↔t por bloque rst, 3↔6) → `“Ft6”`.
+- Para vocales, conviene detectar si la letra (ignorando caja) es `A/E/I/O/U`.   
+- Para el corrimiento tener en cuenta que es **circular**.
+- Para dígitos, **restar el código del carácter a `'9'` y sumar `'0'`**.
 
 ---
 
 ### Criterios de evaluación generales
-- Compila sin warnings (siempre que sea razonable).  
-- Validaciones y manejo de errores de entrada.  
-- Uso correcto de **estructuras de control** (bucles, condicionales, `switch` donde aplique).  
+- **COMPILA**
+- Validaciones y manejo de errores.  
+- Uso correcto de **estructuras de control**. 
 - Claridad del código (nombres de variables, comentarios breves).  
