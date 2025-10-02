@@ -156,8 +156,7 @@ void ej1() {
                 printf("Cantidad de libros retirados: %d\n", libros);
                 printf("Clase de libro: %s\n", clase_De_libro);
             }
-
-        } while(ch != 0);
+            } while(ch != 'F');
 
         printf("-------------------\nFIN DEL DIA\n---------------------------\n");
         
