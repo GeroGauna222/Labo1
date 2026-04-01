@@ -171,10 +171,10 @@ Esta es la **práctica recomendada** porque separa la lectura del análisis.
 
 ---
 
-### Resumen para recordar:
-* **`stdin`** es una fila de espera.
-* **`scanf`** es una ventana de entrada que deja basura en la fila.
-* **`fgets`** es una ventana de entrada por la que pasa toda la fila.
+### Resumen 2.0:
+* **`stdin`** es una fila de espera, el buffer de entrada. Consecuentemente **`stdout`** lo mismo, pero de salida
+* **`scanf`** es una ventana de entrada que deja basura.
+* **`fgets`** es una ventana de entrada por la que pasa todo.
 
 
 
