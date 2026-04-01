@@ -117,69 +117,17 @@ str4[0] = 'h';
 
 ## #include <`string.h`>
 
-```c
-#include <stdio.h>
-#include <string.h>  // Necesario para funciones de manejo de strings
+Funciones esenciales para manipular texto:
 
-void strings() {
-  // 1. strcpy: copiar un string
-  char origin[] = "Hello world";
-  char destiny[50];
-  strcpy(destiny, origin);
-  printf("1. Copia con strcpy: %s\n", destiny);
+| Función | Propósito |
+| :--- | :--- |
+| `strcpy(dest, orig)` | Copia un string a otro. |
+| `strlen(str)` | Devuelve la longitud (sin contar el `\0`). |
+| `strcat(dest, orig)` | Concatena (pega) el segundo string al final del primero. |
+| `strcmp(s1, s2)` | Compara dos strings. Devuelve 0 si son **idénticos**. |
+| `strcspn(s1, "\n")` | Busca la posición del Enter (muy útil con `fgets`). |
 
-  // 2. strlen: obtener longitud de un string (sin contar '\0')
-  int length = strlen(origin);
-  printf("2. Longitud con strlen: %d\n", length);
-
-  // 3. strcat: concatenar strings
-  char hi[100] = "Hi";
-  strcat(hi, " ");
-  strcat(hi, "Juan");
-  printf("3. Concatenación con strcat: %s\n", hi);
-
-  // 4. strcmp: comparar dos strings
-  char palabra1[] = "perro";
-  char palabra2[] = "gato";
-
-  if (strcmp(palabra1, palabra2) == 0) {
-      printf("4. Los strings son iguales\n");
-  } else {
-      printf("4. Los strings son diferentes\n");
-  }
-
-  // 5. strncpy: copiar N caracteres de un string
-  char part[10];
-  strncpy(part, origin, 4);  // Copia solo "Hell"
-  parcial[4] = '\0';  // ¡Recordá agregar '\0' manualmente!
-  printf("5. Copia parcial con strncpy: %s\n", part);
-
-  // 6. strstr: buscar un substring dentro de otro
-  char result[] = strstr(origin, "world");
-  if (result != NULL) {
-      printf("6. Substring encontrado: %s\n", result);
-  }
-
-  // 7. strchr: encontrar la primera aparición de un carácter
-  int pos = strchr(origin, 'o');
-  if (pos != NULL) {
-      printf("7. Primer 'o' en origin: %d\n", pos);
-  }
-
-  // 8. memset: llenar un array con un carácter
-  char buffer[10];
-  memset(buffer, '-', 9);  // Llena los primeros 9 bytes con '-'
-  buffer[9] = '\0';        // Agrega el final de string
-  printf("8. Buffer con memset: %s\n", buffer);
-
-  // 9. strcspn: Busca en un string la primera posición donde aparece algún carácter que esté en un segundo string.
-  //Si no lo encuentra devuelve la última posición
-  char texto[] = "Hola mundo\n";
-  int pos = strcspn(texto, "\n");
-  printf("El salto de línea está en la posición: %d\n", pos);
-}
-
-```
+---
 
 ## Profundizacion: `\0`
 
@@ -225,6 +173,8 @@ Otro posible error es la sobreescritura del \0
 ---
 ## Text Input
 
+Dominar el ingreso de texto en C es entender cómo gestionar el flujo de bytes entre el usuario y la memoria RAM. Aquí veremos la evolución desde lo más básico hasta la práctica profesional.
+
 Ya conocemos scanf(), entonces probemos...
 
 ```c
@@ -238,6 +188,19 @@ Ya conocemos scanf(), entonces probemos...
   printf("Hola %s!\n", str);
 ```
 Ya encontramos una particularidad, no?
+Podemos "parchar" los problemas de `scanf` usando límites de ancho y scansets.
+
+```c
+char nombre[20];
+// %19: Lee máximo 19 caracteres para dejar espacio al \0
+// [^\n]: Lee todo lo que NO sea un Enter (permite espacios)
+scanf("%19[^\n]", nombre);
+```
+- **Mejora**: Ya no rompemos la memoria y aceptamos nombres completos.
+- **El problema del residuo**: `scanf` deja el `\n` (el Enter) en el buffer. La siguiente lectura fallará porque encontrará ese Enter sobrante.
+
+---
+
  Bueno, probemos ahora de la siguiente manera...
 
 ```c
@@ -268,6 +231,10 @@ Un intento mas (la 3ra es la vencida dicen ¿?)
   str[strcspn(str, "\n")] = '\0';
   printf("Hola %s!\n", str);
 ```
+
+- **Seguridad**: Nunca leerá más de lo que el array `nombre` puede soportar.
+- **Comportamiento**: Lee hasta encontrar un `\n` o llenar el espacio. **Incluye el `\n` dentro del string**, por lo que suele ser necesario eliminarlo:
+  `variable[strcspn(variable, "\n")] = '\0';`
 
 Bueno, logramos arreglar eso! cambie el `\n` por un `\0`... pero hay un problema todavía... si ingreso más de 20 caracteres? Bueno, ese sobrante quedaría en el buffer. Y si quiero usar scanf y tambien fgets en una misma funcion? Bueno, scanf deja el \n en el buffer, y fgets va a tomar eso de arranque, y no se va a poder ingresar más información.
 
@@ -337,6 +304,11 @@ pero como en todos lados existen las **prácticas recomendadas**. En C, mucha bi
 | `fgets()`  | Lee una línea entera como texto (incluye `\n`)       |
 | `sscanf()` | Analiza ese texto como si fuera `scanf`, pero sobre un string |
 
+Divide el proceso en dos pasos:
+
+1. **Captura**: `fgets` vacía la línea entera del buffer `stdin`.
+2. **Interpretación**: `sscanf` analiza ese texto y extrae lo que necesitamos.
+
 ### sscanf
 > sscanf( de donde va a leer datos, indicador de formato del dato a leer, direccion de memoria donde gaurdar lo leído )
 
@@ -386,6 +358,11 @@ void str_correct() {
 
 Listo, esta es la recomendación para el ingreso de datos. Vemos que ahora tenemos un buffer que es a donde va lo que ingrese el usuario (consideraremos este como "inllenable"), ahi lo guarda fgets(). Luego sscanf revisa ese nuevo "buffer" y de ahí lee la información en el formato que se desee, y además no lee el caracter Enter `\n`. De esta manera logramos manejar errores que podrían darse a la hora de leer datos. **Igualmente nos encontraremos con limitaciones**, pero que se arreglan con facilidad:
 > `%s` lee solo una palabra, que se puede arreglar esto con %N[^\n]s (N siendo la cantidad de caracteres a leer como máximo y [^\n] indica que lea hasta el enter en vez de hasta el espacio)
+
+### ¿Por qué usar esto?
+- **Robustez**: Si el usuario escribe basura, `fgets` ya la sacó del sistema. No hay riesgo de bucles infinitos.
+- **Flexibilidad**: Podés analizar el mismo buffer varias veces con distintos formatos si es necesario.
+- **Limpieza**: El buffer de entrada siempre queda "limpio" para la siguiente instrucción.
 
 Lo que vamos a hacer en este curso, va a ser darles libertad: si quieren usar scanf y fgets, haganlo así. Si quieren usar solo scanf con sus debidas correcciones, también. Si quieren usar lo recomendado, bienvenido sea; sólo sepan que lo que queremos es que se maneje correctamente la información.
 
