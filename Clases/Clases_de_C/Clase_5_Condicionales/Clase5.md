@@ -4,6 +4,44 @@
 
 Las estructuras condicionales son elementos fundamentales en la programación que permiten que un programa tome decisiones y ejecute diferentes bloques de código dependiendo de si ciertas condiciones se cumplen o no. Estas estructuras son la base de la lógica de programación y permiten crear programas dinámicos que responden de manera diferente según las circunstancias.
 
+Por ejemplo:
+- SI la nota es mayor o igual a 6, aprueba
+- SI un número es par, mostrar un mensaje
+- SI el usuario elige una opción del menú, ejecutar una acción distinta
+
+Una estructura condicional permite que el programa haga una pregunta y, según la respuesta, ejecute un bloque de código u otro.
+
+---
+
+### Condiciones en C
+
+Una condición es una expresión que puede dar como resultado:
+- **verdadero**
+- **falso**
+
+En C, una condición se considera:
+- **verdadera** si vale distinto de 0
+- **falsa** si vale 0
+
+### Operadores de comparación
+
+Estos operadores se usan para armar condiciones:
+- `==` igual a
+- `!=` distinto de
+- `>` mayor que
+- `<` menor que
+- `>=` mayor o igual que
+- `<=` menor o igual que
+
+```c
+edad >= 18
+nota < 6
+numero == 10
+opcion != 3
+```
+
+---
+
 ### Tipos de estructuras condicionales en C
 
 - **if**: Evalúa una condición y ejecuta un bloque de código si es verdadera.
@@ -39,6 +77,15 @@ int main() {
 }
 ```
 
+### Explicación
+
+- Se evalúa `edad >= 18`
+- Como la condición es verdadera, se ejecuta el `printf`
+
+Si la condición fuera falsa, no se ejecutaría nada dentro del bloque.
+
+---
+
 ## La estructura if-else
 
 La estructura `if-else` permite ejecutar un bloque de código cuando la condición es verdadera y otro bloque diferente cuando la condición es falsa.
@@ -71,9 +118,15 @@ int main() {
 }
 ```
 
+### Idea importante
+
+Con `if-else`, **siempre se ejecuta uno de los dos bloques**.
+
+---
+
 ## La estructura if-else if-else
 
-Cuando necesitamos evaluar múltiples condiciones en secuencia, podemos usar la estructura `if-else if-else`.
+Cuando necesitamos evaluar múltiples condiciones en secuencia, podemos usar la estructura `if-else if-else`. **Hay más de dos posibilidades**
 
 ### Sintaxis básica
 
@@ -113,6 +166,17 @@ int main() {
 }
 ```
 
+### Explicación
+
+El programa va evaluando de arriba hacia abajo:
+
+- si cumple la primera, entra ahí y termina;
+- si no, prueba la segunda;
+- si no, prueba la tercera;
+- si no cumple ninguna, entra en `else`.
+
+---
+
 ## Operadores lógicos en condiciones
 
 Para crear condiciones más complejas, podemos utilizar operadores lógicos:
@@ -149,6 +213,8 @@ int main() {
 }
 ```
 
+---
+
 ## El operador ternario
 
 El operador condicional ternario (`? :`) es una forma abreviada de escribir declaraciones simples de if-else.
@@ -177,6 +243,73 @@ int main() {
     return 0;
 }
 ```
+
+---
+
+## Errores comunes en condicionales
+
+### 1. Confundir `=` con `==`
+
+```c
+if (x = 5)   // MAL
+```
+
+Acá no se está comparando: se está asignando.
+
+Lo correcto es:
+
+```c
+if (x == 5)  // BIEN
+```
+
+---
+
+### 2. Olvidarse de las llaves
+
+```c
+if (edad >= 18)
+    printf("Mayor\n");
+    printf("Puede pasar\n");
+```
+
+Aunque parezca que ambos `printf` dependen del `if`, en realidad solo el primero depende.
+
+Lo correcto:
+
+```c
+if (edad >= 18) {
+    printf("Mayor\n");
+    printf("Puede pasar\n");
+}
+```
+
+---
+
+### 3. Poner mal el orden de las condiciones
+
+Ejemplo incorrecto:
+
+```c
+if (nota >= 4) {
+    printf("Recupera\n");
+} else if (nota >= 7) {
+    printf("Aprobado\n");
+}
+```
+
+Si la nota es 8, entra en `nota >= 4` y nunca llega al otro caso.
+
+Lo correcto es ir de lo más restrictivo a lo más general:
+
+```c
+if (nota >= 7) {
+    printf("Aprobado\n");
+} else if (nota >= 4) {
+    printf("Recupera\n");
+}
+```
+
+---
 
 ## La estructura switch-case
 
@@ -266,7 +399,7 @@ int main() {
 
 Este comportamiento, conocido como "fall-through", puede ser útil en ciertos escenarios pero también puede causar bugs difíciles de detectar si no es intencional.
 
-## Estructuras condicionales anidadas
+## Estructuras anidadas
 
 Las estructuras condicionales pueden anidarse unas dentro de otras para crear lógicas más complejas.
 
@@ -425,6 +558,95 @@ int main() {
     return 0;
 }
 ```
+
+---
+
+## ¿Cuándo usar `if` y cuándo usar `switch`?
+
+### Conviene usar `if` cuando:
+
+- comparamos rangos:
+  - `nota >= 6`
+  - `edad < 18`
+- usamos operadores lógicos:
+  - `edad >= 18 && tieneDNI == 1`
+
+### Conviene usar `switch` cuando:
+
+- una variable puede valer distintos números concretos:
+  - opción 1, 2, 3, 4
+- queremos hacer menús
+
+### Ejemplo típico
+
+```c
+switch (opcion) {
+    case 1:
+        printf("Alta\n");
+        break;
+    case 2:
+        printf("Baja\n");
+        break;
+    case 3:
+        printf("Modificar\n");
+        break;
+    default:
+        printf("Opción incorrecta\n");
+}
+```
+
+---
+
+## Ejemplo práctico: menú simple con `switch`
+
+```c
+#include <stdio.h>
+
+int main() {
+    int opcion;
+    float n1, n2, resultado;
+
+    printf("MENÚ DE CALCULADORA\n");
+    printf("1. Sumar\n");
+    printf("2. Restar\n");
+    printf("3. Multiplicar\n");
+    printf("4. Dividir\n");
+    printf("Ingrese una opción: ");
+    scanf("%d", &opcion);
+
+    printf("Ingrese dos números: ");
+    scanf("%f %f", &n1, &n2);
+
+    switch (opcion) {
+        case 1:
+            resultado = n1 + n2;
+            printf("Resultado: %.2f\n", resultado);
+            break;
+        case 2:
+            resultado = n1 - n2;
+            printf("Resultado: %.2f\n", resultado);
+            break;
+        case 3:
+            resultado = n1 * n2;
+            printf("Resultado: %.2f\n", resultado);
+            break;
+        case 4:
+            if (n2 != 0) {
+                resultado = n1 / n2;
+                printf("Resultado: %.2f\n", resultado);
+            } else {
+                printf("No se puede dividir por cero.\n");
+            }
+            break;
+        default:
+            printf("Opción inválida.\n");
+    }
+
+    return 0;
+}
+```
+
+---
 
 ## Ejercicios prácticos
 
