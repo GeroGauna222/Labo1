@@ -654,6 +654,42 @@ int main() {
 
 2. **Clasificador de triángulos**: Recibe las longitudes de tres lados y determina si forman un triángulo equilátero, isósceles o escaleno.
 
+```c
+#include <stdio.h>
+
+int main() {
+    float side1, side2, side3;
+
+    printf("Ingrese el lado 1\n");
+    scanf("%f", &side1);
+
+    printf("Ingrese el lado 2\n");
+    scanf("%f", &side2);
+
+    printf("Ingrese el lado 3\n");
+    scanf("%f", &side3);
+
+    if (side1>0 && side2>0 && side3>0) {
+        // regla base del triangulo
+        if (side1 + side2 > side3 && side1 + side3 > side2 && side2 + side3 > side1) {
+            if (side1 == side2 && side2 == side3){
+                printf("El triangulo es equilatero.\n");
+            }else if (side1==side2 || side1==side3 ||side3==side2){
+                printf("El triangulo es isosceles.\n");
+            }else{
+                printf("El triangulo es escaleno.\n");
+            }
+        } else {
+            printf("No se cumple la regla base del triangulo. Tu triangulo NO CIERRA.\n");
+        }
+    } else {
+        printf("Los lados deben ser de longitud mayor a cero\n");
+    }
+
+    return 0;
+}
+```
+
 3. **Validación de fecha**: Solicita día, mes y año, y verifica si forman una fecha válida (considerando años bisiestos).
 
 4. **Simulador de cajero automático**: Crea un menú con opciones para consultar saldo, depositar, retirar y salir, utilizando `switch` y validando condiciones como saldo insuficiente.
