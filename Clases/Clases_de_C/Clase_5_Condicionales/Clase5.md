@@ -658,6 +658,59 @@ int main() {
 
 4. **Simulador de cajero automático**: Crea un menú con opciones para consultar saldo, depositar, retirar y salir, utilizando `switch` y validando condiciones como saldo insuficiente.
 
+```c
+#include <stdio.h>
+
+int main() {
+    int opcion;
+    float saldo, monto;
+    saldo = 10000;
+    do{
+        printf("\n**************************\n");
+        printf("           CAJERO\n");
+        printf("**************************\n");
+        printf("1. Consultar Saldo\n");
+        printf("2. Depositar\n");
+        printf("3. Retirar\n");
+        printf("4. Salir\n");
+        printf("Ingrese una opción: ");
+        scanf("%d", &opcion);
+
+        switch (opcion) {
+            case 1:
+                printf("Su saldo es %.2f\n", saldo);
+                break;
+            case 2:
+                printf("Cuanto desea depositar?\n");
+                scanf("%f", &monto);
+                if(monto > 0){
+                    saldo += monto;
+                } else {
+                    printf("ingresaste un monto de deposito invalido\n");
+                }
+                break;
+            case 3:
+                printf("Cuanto desea retirar?\n");
+                scanf("%f", &monto);
+                if(monto > 0 && monto <= saldo){
+                    saldo -= monto;
+                    printf("retiraste $%.2f\n", monto);
+                } else {
+                    printf("ingresaste un monto de retiro invalido\n");
+                }
+                break;
+            case 4:
+                printf("Gracias por operar con nosotros.");
+                break;
+            default:
+                printf("Opción inválida.\n");
+        }
+    } while (opcion != 4);
+
+    return 0;
+}
+```
+
 ## Conclusión
 
 Las estructuras condicionales son herramientas esenciales en programación que permiten crear programas dinámicos capaces de tomar decisiones. En C, tenemos varias opciones como `if`, `if-else`, `if-else if-else` y `switch-case`, cada una con sus propios casos de uso óptimos. Dominar estas estructuras es fundamental para crear programas eficientes y lógicos.
