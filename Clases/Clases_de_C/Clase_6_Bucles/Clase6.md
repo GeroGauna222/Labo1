@@ -141,10 +141,12 @@ for (int i = 1; i <= 5; i++) {
 ### Buenas prácticas con bucles
 
 - Evitar bucles infinitos: Asegurate de que haya una condición de salida clara.
-
 - Elegir el bucle correcto: Usá for para iteraciones contadas, while o do-while si depende de condiciones externas.
-
 - Manejar bien las variables del bucle: Declaralas y actualizalas correctamente.
+- **El punto y coma traicionero**: 
+    `while(i < 10);` -> Ese `;` al final de la línea del `while` crea un bucle infinito que no hace nada. Evitalo.
+- **Límites de Arrays**: Recordá que un array de tamaño $N$ termina en el índice $N-1$. Usar `i <= N` en un `for` es una invitación al desastre (lees basura de memoria).
+- **Condiciones de salida**: Asegurate siempre de que la variable de control cambie dentro del bucle para que la condición de salida se cumpla eventualmente.
 
 ### Ejemplo práctico: Tabla de multiplicar
 ```c
