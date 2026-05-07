@@ -86,3 +86,16 @@ Elegir:
 - Si perdes, informar totales y zona de derrota
 - Si ganas informar totales finales
 - **Usar srand y rand para aleatorios teniendo en cuenta los rangos**
+
+## Ejercicio 3
+Sos un hacker, tenes que interceptar mensajes de Anthropic y codificarlos para complicar el trabajo interno de la compañía. Debe transformarse el mensaje siguiendo las siguientes reglas:
+
+1. Minúsculas: se pasan a Mayus y se desplazan 3 a la derecha en el abecedario
+2. Mayúsculas: se pasan a Minus y se desplazan 2 a la izquierda en el abecedario
+3. **SI CON EL MOVIMIENTO TE PASAS DE LA ULTIMA/PRIMERA LETRA DEL ABECEDARIO** dar la vuelta empezar desde el lado contrario ('*a*' a la izquierda es '*z*')
+4. Espacios: se vuelven guiones bajos si la letra previa es Mayus, sino se vuelven '*&*'
+5. Digitos y otros simbolos **NO CAMBIAN**
+
+### Condicion
+**ESTA PROHIBIDO EL USO DE ctype.h**
+
