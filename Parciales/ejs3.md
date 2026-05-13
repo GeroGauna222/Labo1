@@ -24,6 +24,49 @@ Leer una cadena de caracteres (máx. 100) y transformarla según las siguientes 
 4. **Dígitos originales (números):** Deben ser eliminados de la cadena o reemplazados por un punto `'.'`.
 5. **Símbolos:** Cualquier otro carácter no mencionado debe permanecer igual.
 
+```c
+#include <stdio.h>
+#include <string.h>
+
+int main() {
+    char msg[100];
+    
+    printf("Ingrese telemetría: ");
+    fgets(msg, sizeof(msg), stdin);
+    msg[strcspn(msg, "\n")] = '\0'; // Limpieza del \n
+
+    for (int i = 0; msg[i] != '\0'; i++) {
+        char c = msg[i];
+
+        // 1. Para vocales minúsc
+        if (c == 'a') msg[i] = '1';
+        else if (c == 'e') msg[i] = '2';
+        else if (c == 'i') msg[i] = '3';
+        else if (c == 'o') msg[i] = '4';
+        else if (c == 'u') msg[i] = '5';
+        
+        // 2. Ahora consonantes (y letras en general, las vocales ya salieron arriba)
+        else if ((c >= 'a' && c <= 'z') || (c >= 'A' && c <= 'Z')) {
+            // Manejo circular para 'y', 'z', 'Y', 'Z'
+            if (c == 'y') msg[i] = 'a';
+            else if (c == 'z') msg[i] = 'b';
+            else if (c == 'Y') msg[i] = 'A';
+            else if (c == 'Z') msg[i] = 'B';
+            else msg[i] = c + 2;
+        }
+        
+        // 3. Espacios
+        else if (c == ' ') msg[i] = '#';
+        
+        // 4. Digitos originales
+        else if (c >= '0' && c <= '9') msg[i] = '.';
+    }
+
+    printf("Mensaje Decodificado: %s\n", msg);
+    return 0;
+}
+```
+
 ---
 
 ## Cifrado de la Sonda Voyager 3
@@ -68,3 +111,4 @@ Analizar el string ingresado y aplicar el siguiente filtro secuencial:
 
 
 4. **Visualización:** Al finalizar, imprimir el string resultante y la cantidad total de caracteres que fueron modificados.
+
