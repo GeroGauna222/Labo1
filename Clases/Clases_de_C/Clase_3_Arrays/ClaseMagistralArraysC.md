@@ -1,10 +1,8 @@
 # **Clase Magistral: Memoria, Buffers y Arrays en C**
 
-*De la arquitectura de transistores al control profesional de estructuras de datos y flujos de entrada*
+*De la arquitectura de hardware al control profesional de estructuras de datos y flujos de entrada*
 
 ## **Bloque 0: Cimientos de Hardware y Compilación**
-
-En el lenguaje C no existen abstracciones mágicas: programar en este lenguaje exige comprender de forma directa cómo la computadora gestiona los transistores de memoria y de qué manera el código fuente se traduce en instrucciones reales de procesador.
 
 ### **1\. El Pipeline de Construcción (Build Process)**
 
