@@ -71,26 +71,26 @@ El jugador puede elegir:
 3. Esquivar
 
 ### Dementor
-- Defensivo: Magia −[8..15], Vida −[0..5]
-- Ofensivo: Magia −[15..25], Vida −[4..12]
-- Esquivar: Magia −[2..6], Vida −[5..15]
+- Defensivo: Magia −[8..15], Vida −(0..5]
+- Ofensivo: Magia −[15..25), Vida −[4..12)
+- Esquivar: Magia −(2..6), Vida −[5..15]
 
 ### Troll
-- Defensivo: Magia −[6..12], Vida −[3..10]
-- Ofensivo: Magia −[12..20], Vida −[6..18]
-- Esquivar: Magia −[2..5], Vida −[4..14]
+- Defensivo: Magia −[6..12), Vida −[3..10]
+- Ofensivo: Magia −[12..20], Vida −(6..18)
+- Esquivar: Magia −(2..5], Vida −[4..14]
 
 ### Araña gigante
-- Defensivo: Magia −[5..10], Vida −[2..8]
-- Ofensivo: Magia −[10..18], Vida −[5..15]
-- Esquivar: Magia −[1..4], Vida −[3..12]
+- Defensivo: Magia −[5..10), Vida −(2..8)
+- Ofensivo: Magia −(10..18], Vida −[5..15]
+- Esquivar: Magia −[1..4], Vida −[3..12)
 
 ### Poción aleatoria
 Después de cada ronda existe una probabilidad del **25%** de encontrar una poción.
 
 Si aparece, generar aleatoriamente:
-- 50% → recuperar **[10..20] de vida**
-- 50% → recuperar **[8..15] de magia**
+- 50% → recuperar **[10..20) de vida**
+- 50% → recuperar **(8..15] de magia**
 
 Vida máxima: 100.
 Magia máxima: 80.
